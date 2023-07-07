@@ -3,10 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarUsrComponent } from './components/sidebar-usr/sidebar-usr.component';
+import { SidebarLecComponent } from './components/sidebar-lec/sidebar-lec.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { ActivComponent } from './components/activ/activ.component';
+import { NotifComponent } from './components/notif/notif.component';
+import { CalComponent } from './components/cal/cal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    SidebarUsrComponent,
+    SidebarLecComponent,
+    HomeComponent,
+    LoginComponent,
+    ActivComponent,
+    NotifComponent,
+    CalComponent
   ],
   imports: [
     BrowserModule,
