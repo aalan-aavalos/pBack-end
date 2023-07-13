@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ActivComponent } from './components/activ/activ.component';
 import { NotifComponent } from './components/notif/notif.component';
 import { CalComponent } from './components/cal/cal.component';
+import { HomeUsrComponent } from './components/home-usr/home-usr.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CalComponent } from './components/cal/cal.component';
     LoginComponent,
     ActivComponent,
     NotifComponent,
-    CalComponent
+    CalComponent,
+    HomeUsrComponent
   ],
   imports: [
     BrowserModule,

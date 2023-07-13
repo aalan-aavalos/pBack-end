@@ -1,0 +1,16 @@
+.lateral{
+    display: block;
+    background: gray;
+    width: auto;
+}
+ul a{
+    border-radius: 0;
+    color: white;
+    padding: 20px;
+    transition: 200ms all;
+}
+
+ul a:hover{
+    background: rgb(95, 95, 95);
+    font-size: larger;
+}
