@@ -1,16 +1,18 @@
 .fa{
     float: right; 
     width: 20%;
+    color: green;
 }
 .alert{
     display: block;
     float: left;
-    background: gainsboro;
-    margin: 15px;
+    background: rgba(255, 255, 255, 0.651);
+    margin: 30px;
     width: 95%;
-    font-style: italic;
+    font-style: arial;
     font-size: 20px;
     height: 80px;
+    border-color: rgba(255, 255, 255, 0);
 }
 
 .hd{
@@ -33,4 +35,12 @@ color: cadetblue;
     float: right; 
     width: 15%;
     top: 10%;
+}
+.ca{
+    color: black;
+}
+.ttt{
+width: 20%;
+top: 10%;
+float: right;
 }
