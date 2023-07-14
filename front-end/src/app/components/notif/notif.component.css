@@ -1,0 +1,36 @@
+.fa{
+    float: right; 
+    width: 20%;
+}
+.alert{
+    display: block;
+    float: left;
+    background: gainsboro;
+    margin: 15px;
+    width: 95%;
+    font-style: italic;
+    font-size: 20px;
+    height: 80px;
+}
+
+.hd{
+    display: block;
+    float: left;
+    background: gainsboro;
+    margin: 10px;
+    width: 75%;
+    font-style: italic;
+    font-size: 20px;
+    height: 80px;
+}
+.btt{
+justify-content: flex-start;
+float: right;
+color: cadetblue; 
+}
+
+.fe{
+    float: right; 
+    width: 15%;
+    top: 10%;
+}
