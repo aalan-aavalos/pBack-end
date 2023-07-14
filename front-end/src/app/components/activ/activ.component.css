@@ -138,9 +138,6 @@ div > .cancelar:hover{
     opacity: 0;
 }*/
 @media screen and (max-width:760px) {
-    body{
-        overflow-x: scroll;
-    }
     #Contenido{
         overflow-x: scroll;
         display: grid;
