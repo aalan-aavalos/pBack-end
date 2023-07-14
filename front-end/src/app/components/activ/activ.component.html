@@ -1,7 +1,165 @@
-<div class="row">
+<body>
+  <section class="row">
     <div class="col-md-2">
-        <app-sidebar-usr></app-sidebar-usr>
+      <app-sidebar-usr></app-sidebar-usr>
     </div>
-    <div class="col-md-10">
+    <div id="Contenido" class="col-md-10">
+      <article is="tabla">
+        <table class="eventos">
+          <thead>
+            <tr>
+              <th id="numero">#</th>
+              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Responsable</th>
+              <th>Lugar</th>
+              <th>Descripcion</th>
+              <th>programa</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of actividadService.actividades">
+              <td>{{ item.id }}</td>
+              <td>{{ item.fecha }}</td>
+              <td>{{ item.nombre }}</td>
+              <td>{{ item.responsable }}</td>
+              <td>{{ item.lugar }}</td>
+              <td></td>
+              <td>
+                <a href="" target="_blank">
+                  <i class="fa-sharp fa-regular fa-file"></i> </a
+                >Ver archivo
+              </td>
+              <td>
+                <button
+                  class="btn btn-secondary btn-sm"
+                  (click)="updAct(item); mostrar(); Alerta(); Ocultar()"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="delAct(item.id)">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <div class="contBoton">
+        <button
+          class="agregar"
+          (click)="mostrar(); Alerta(); Ocultar()"
+          *ngIf="oculto"
+        >
+          Agregar Nueva
+        </button>
+      </div>
+      <form id="agAct" *ngIf="visible">
+        <div class="tituloForm">Gestionar Actividad</div>
+        <form class="formulario" #actividadForm="ngForm">
+          <div>
+            <input
+              type="hidden"
+              name="id"
+              [(ngModel)]="actividadService.actividad.id"
+            />
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">Fecha:</span>
+              <input
+                name="fecha"
+                type="date"
+                id="basic-url"
+                class="form-control"
+              />
+              <span class="input-group-text" id="basic-addon2"
+                >Nombre de la Actividad:</span
+              >
+              <input
+                name="nombre"
+                type="text"
+                class="form-control"
+                [(ngModel)]="actividadService.actividad.nombre"
+                id="basic-url"
+              />
+            </div>
+
+            <label for="basic-url" class="form-label"></label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3"
+                >Responsable(s)</span
+              >
+              <input
+                name="responsable"
+                type="text"
+                class="form-control"
+                id="basic-url"
+                aria-describedby="basic-addon3"
+                [(ngModel)]="actividadService.actividad.responsable"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Lugar</span>
+              <input
+                name="lugar"
+                type=""
+                class="form-control"
+                id="basic-url"
+                [(ngModel)]="actividadService.actividad.lugar"
+              />
+            </div>
+            <span>Descripcion del evento</span>
+            <div class="input-group">
+              <textarea
+                class="form-control"
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2"
+                >Cargar Programa</span
+              >
+              <input
+                type="file"
+                class="form-control"
+                aria-label="Amount (to the nearest dollar)"
+              />
+            </div>
+          </div>
+          <div class="confirmacion" *ngIf="alerta">
+            <span>Desea guardar los cambios?</span>
+            <div class="boton2">
+              <button class="btn btn-secondary m-2" (click)="Alerta()">
+                no
+              </button>
+              <button
+                class="btn btn-primary m-2"
+                (click)="insAct(actividadForm); mostrar(); Ocultar(); Alerta()"
+              >
+                si
+              </button>
+            </div>
+          </div>
+        </form>
+        <button
+          type="reset"
+          class="btn btn-secondary m-2"
+          (click)="formReset(actividadForm)"
+        >
+          <i class="fa-solid fa-broom-wide"></i>
+          Limpiar
+        </button>
+        <div class="opciones">
+          <button
+            class="cancelar"
+            (click)="mostrar(); Alerta(); Ocultar(); formReset(actividadForm)"
+          >
+            Cancelar
+          </button>
+          <button class="guardar" (click)="Alerta()">Guardar</button>
+        </div>
+      </form>
     </div>
-</div>
+  </section>
+</body>

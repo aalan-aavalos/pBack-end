@@ -1,0 +1,156 @@
+body{
+    overflow: hidden;
+    height: max-content;
+}
+section{
+    height: calc(max-content+30px);
+}
+#Contenido{
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    align-content: initial;
+    padding: 0px 20px;
+    height: max-content;
+    margin-top: 10px;
+}
+/*#Contenido:has(:checked){
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    height: 500px;
+    align-items: start;
+    align-content: initial;
+}*/
+thead tr th{
+    background: cornflowerblue;
+    color: aliceblue;
+    border:solid black 3px;
+}
+td{
+    border: solid 2px black;
+}
+td,th{
+    background: white;
+    padding: 0 10px;
+    width: 500px;
+    height: 20px;
+    overflow: -moz-hidden-unscrollable;
+
+}
+.contBoton{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding:30px 0px;
+}
+.agregar{
+    color: aliceblue;
+    background: rgb(29, 201, 14);
+    padding: 10px 15px;
+    width: max-content;
+    border-radius:20%;
+    font-size: 15px;
+}
+div > .agregar:hover{
+    background-color: rgb(2, 73, 5);
+}
+.guardar{
+    color: aliceblue;
+    background: rgb(29, 201, 14);
+    width: max-content;
+    border-radius:20%;
+    font-size: 15px;
+    place-content: center;
+}
+div > .agregar:hover{
+    background-color: rgb(2, 73, 5);
+}
+.cancelar{
+    color: aliceblue;
+    background: rgb(201, 14, 14);
+    width: max-content;
+    border-radius:20%;
+    font-size: 15px;
+}
+div > .cancelar:hover{
+    background-color: rgb(100, 9, 9);
+}
+#agAct{
+    background: white;
+    display: block;
+    border: solid black 1px;
+    border-radius: 2%;
+    position: absolute;
+    width:81%;
+    height: max-content;
+}
+.tituloForm{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    height: 80px;
+    border-bottom:solid black 1px;
+}
+.formulario{
+    background: white;
+    padding: 20px;
+    height: 400px;
+    overflow: scroll;
+    display: grid;
+}
+.opciones{
+    display: flex;
+    justify-content: flex-end;
+    border-top:solid 1px black;
+    padding: 20px;
+    height: 80px;
+}
+.confirmacion{
+    display: grid;
+    background: white;
+    border-radius: 2%;
+    border: solid 2px black;
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    right: +30%;
+    padding: 10px;
+    align-content: space-evenly;
+    justify-content: center;
+}
+.boton2{
+    display: grid;
+    height: 100px;
+    margin: 0px;
+}
+.boton2 button{
+    width: 100%;
+}
+
+/*.click{
+    position: fixed;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    opacity: 0;
+}*/
+@media screen and (max-width:760px) {
+    body{
+        overflow-x: scroll;
+    }
+    #Contenido{
+        overflow-x: scroll;
+        display: grid;
+    }
+    #agAct{
+        position: absolute;
+        width: 90%;
+    }
+    .contLateral{
+        padding: 0%;
+        height: 300px;
+    }
+}
