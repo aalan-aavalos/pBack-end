@@ -11,8 +11,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ActivComponent } from './components/activ/activ.component';
 import { NotifComponent } from './components/notif/notif.component';
-import { CalComponent } from './components/cal/cal.component';
 import { HomeUsrComponent } from './components/home-usr/home-usr.component';
+import { CalUsrComponent } from './components/cal-usr/cal-usr.component';
+import { RegisComponent } from './components/regis/regis.component';
+import { CalComponent } from './components/cal/cal.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { HomeUsrComponent } from './components/home-usr/home-usr.component';
     LoginComponent,
     ActivComponent,
     NotifComponent,
-    CalComponent,
-    HomeUsrComponent
+    HomeUsrComponent,
+    CalUsrComponent,
+    RegisComponent,
+    CalComponent
   ],
   imports: [
     BrowserModule,
