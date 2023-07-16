@@ -1,9 +1,9 @@
 body{
     overflow: hidden;
-    height: max-content;
+    min-height: 100vh;
 }
 section{
-    height: calc(max-content+30px);
+    max-height: calc(max-content+30px);
 }
 #Contenido{
     display: grid;
@@ -11,19 +11,13 @@ section{
     align-items: start;
     align-content: initial;
     padding: 0px 20px;
-    height: max-content;
     margin-top: 10px;
 }
-/*#Contenido:has(:checked){
-    display: grid;
-    place-content: center;
-    justify-items: center;
-    height: 500px;
-    align-items: start;
-    align-content: initial;
-}*/
+table{
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
+}
 thead tr th{
-    background: cornflowerblue;
+    background: #72A443;
     color: aliceblue;
     border:solid black 3px;
 }
@@ -35,8 +29,9 @@ td,th{
     padding: 0 10px;
     width: 500px;
     height: 20px;
-    overflow: -moz-hidden-unscrollable;
-
+}
+#gestion button{
+    margin: 2px;
 }
 .contBoton{
     display: flex;
@@ -48,9 +43,8 @@ td,th{
     color: aliceblue;
     background: rgb(29, 201, 14);
     padding: 10px 15px;
-    width: max-content;
-    border-radius:20%;
-    font-size: 15px;
+    border-radius:10%;
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
 }
 div > .agregar:hover{
     background-color: rgb(2, 73, 5);
@@ -76,21 +70,36 @@ div > .agregar:hover{
 div > .cancelar:hover{
     background-color: rgb(100, 9, 9);
 }
-#agAct{
+.agAct{
     background: white;
     display: block;
     border: solid black 1px;
     border-radius: 2%;
     position: absolute;
     width:81%;
-    height: max-content;
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
 }
+.visble{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 .tituloForm{
     display: block;
     text-align: center;
-    font-weight: bold;
+    font:20px bold;
     padding: 20px;
-    height: 80px;
     border-bottom:solid black 1px;
 }
 .formulario{
@@ -119,6 +128,7 @@ div > .cancelar:hover{
     padding: 10px;
     align-content: space-evenly;
     justify-content: center;
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
 }
 .boton2{
     display: grid;
@@ -128,15 +138,9 @@ div > .cancelar:hover{
 .boton2 button{
     width: 100%;
 }
-
-/*.click{
-    position: fixed;
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
-    background-color: pink;
-    opacity: 0;
-}*/
+.formulario-activo {
+    min-height: 100vh;
+  }  
 @media screen and (max-width:760px) {
     #Contenido{
         overflow-x: scroll;

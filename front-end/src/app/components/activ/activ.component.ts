@@ -1,6 +1,6 @@
 import { Actividad } from 'src/app/models/actividades';
 import { ActividadesService } from 'src/app/services/actividades.service';
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ActivComponent implements OnInit {
 
-  constructor(public actividadService:ActividadesService){}
+  constructor(public actividadService:ActividadesService, private renderer: Renderer2){}
   
   ngOnInit(): void{
     this.getAct();

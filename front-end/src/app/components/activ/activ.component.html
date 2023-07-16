@@ -3,7 +3,7 @@
     <div class="col-md-2">
       <app-sidebar-usr></app-sidebar-usr>
     </div>
-    <div id="Contenido" class="col-md-10">
+    <div id="Contenido" class="col-md-10"><!--Inicio de la tabla de Actividades-->
       <article is="tabla">
         <table class="eventos">
           <thead>
@@ -15,7 +15,7 @@
               <th>Lugar</th>
               <th>Descripcion</th>
               <th>programa</th>
-              <th></th>
+              <th id="gestion">Gestion</th>
             </tr>
           </thead>
           <tbody>
@@ -49,13 +49,14 @@
       <div class="contBoton">
         <button
           class="agregar"
-          (click)="mostrar(); Alerta(); Ocultar()"
+          (click)="mostrar(); Alerta(); Ocultar();"
           *ngIf="oculto"
         >
           Agregar Nueva
         </button>
       </div>
-      <form id="agAct" *ngIf="visible">
+      <!--Bloque del Formulario-->
+      <form class="agAct" *ngIf="visible" [ngClass]="{'visble':visible}">
         <div class="tituloForm">Gestionar Actividad</div>
         <form class="formulario" #actividadForm="ngForm">
           <div>
@@ -128,6 +129,7 @@
             </div>
           </div>
           <div class="confirmacion" *ngIf="alerta">
+            <!--Botones de confirmacion y cancelacion-->
             <span>Desea guardar los cambios?</span>
             <div class="boton2">
               <button class="btn btn-secondary m-2" (click)="Alerta()">
