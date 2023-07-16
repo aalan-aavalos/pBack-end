@@ -1,6 +1,6 @@
 .lateral{
     display: block;
-    background: gray;
+    background: #426E21;
     width: auto;
 }
 ul a{
@@ -11,6 +11,6 @@ ul a{
 }
 
 ul a:hover{
-    background: rgb(95, 95, 95);
+    background: #395e1c;
     font-size: larger;
 }
