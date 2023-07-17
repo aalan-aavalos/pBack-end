@@ -1,0 +1,157 @@
+body{
+    overflow: hidden;
+    min-height: 100vh;
+}
+section{
+    max-height: calc(max-content+30px);
+}
+#Contenido{
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    align-content: initial;
+    padding: 0px 20px;
+    margin-top: 10px;
+}
+table{
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
+}
+thead tr th{
+    background: #72A443;
+    color: aliceblue;
+    border:solid black 3px;
+}
+td{
+    border: solid 2px black;
+}
+td,th{
+    background: white;
+    padding: 0 10px;
+    width: 500px;
+    height: 20px;
+}
+#gestion button{
+    margin: 2px;
+}
+.contBoton{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding:30px 0px;
+}
+.agregar{
+    color: aliceblue;
+    background: rgb(29, 201, 14);
+    padding: 10px 15px;
+    border-radius:10%;
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
+}
+div > .agregar:hover{
+    background-color: rgb(2, 73, 5);
+}
+.guardar{
+    color: aliceblue;
+    background: rgb(29, 201, 14);
+    width: max-content;
+    border-radius:20%;
+    font-size: 15px;
+    place-content: center;
+}
+div > .agregar:hover{
+    background-color: rgb(2, 73, 5);
+}
+.cancelar{
+    color: aliceblue;
+    background: rgb(201, 14, 14);
+    width: max-content;
+    border-radius:20%;
+    font-size: 15px;
+}
+div > .cancelar:hover{
+    background-color: rgb(100, 9, 9);
+}
+.agAct{
+    background: white;
+    display: block;
+    border: solid black 1px;
+    border-radius: 2%;
+    position: absolute;
+    width:81%;
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+}
+.visble{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+.tituloForm{
+    display: block;
+    text-align: center;
+    font:20px bold;
+    padding: 20px;
+    border-bottom:solid black 1px;
+}
+.formulario{
+    background: white;
+    padding: 20px;
+    height: 400px;
+    overflow: scroll;
+    display: grid;
+}
+.opciones{
+    display: flex;
+    justify-content: flex-end;
+    border-top:solid 1px black;
+    padding: 20px;
+    height: 80px;
+}
+.confirmacion{
+    display: grid;
+    background: white;
+    border-radius: 2%;
+    border: solid 2px black;
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    right: +30%;
+    padding: 10px;
+    align-content: space-evenly;
+    justify-content: center;
+    box-shadow:rgb(46, 45, 45) 0.2rem 0.2rem;
+}
+.boton2{
+    display: grid;
+    height: 100px;
+    margin: 0px;
+}
+.boton2 button{
+    width: 100%;
+}
+.formulario-activo {
+    min-height: 100vh;
+  }  
+@media screen and (max-width:760px) {
+    #Contenido{
+        overflow-x: scroll;
+        display: grid;
+    }
+    #agAct{
+        position: absolute;
+        width: 90%;
+    }
+    .contLateral{
+        padding: 0%;
+        height: 300px;
+    }
+}

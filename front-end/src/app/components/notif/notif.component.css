@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .fa{
     float: right; 
     width: 20%;
@@ -43,4 +44,8 @@ color: cadetblue;
 width: 20%;
 top: 10%;
 float: right;
+=======
+.noti{
+    padding: 5px;
+>>>>>>> 607fa4c0459675f06ec61fce939054e418842b9b
 }
