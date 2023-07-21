@@ -1,0 +1,119 @@
+<body>
+  <section class="row">
+    <div class="col-md-2">
+      <app-sidebar-usr></app-sidebar-usr>
+    </div>
+    <div id="Contenido" class="col-md-10"><!--Inicio de la tabla de Actividades-->
+      <article is="tabla">
+        <table class="eventos">
+          <thead>
+            <tr>
+              <th id="numero">#</th>
+              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Responsable</th>
+              <th>Lugar</th>
+              <th>Descripcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of actividadService.actividades">
+              <td>{{ item.idAct }}</td>
+              <td>{{ item.fecha }}</td>
+              <td>{{ item.nomAct }}</td>
+              <td>{{ item.idUsr }}</td>
+              <td>{{ item.idLug }}</td>
+              <td>{{ item.descripcion}}</td>
+              
+              
+              <td>
+                <button class="btn btn-secondary btn-sm" (click)="updAct(item); mostrar(); Alerta(); Ocultar()">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="delAct(item.idAct)">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <div class="contBoton">
+        <button class="agregar" (click)="mostrar(); Alerta(); Ocultar();" *ngIf="oculto">
+          Agregar Nueva
+        </button>
+      </div>
+      <!--Bloque del Formulario-->
+      <form class="agAct" *ngIf="visible" [ngClass]="{'visble':visible}">
+        <div class="tituloForm">Gestionar Actividad</div>
+
+        <form class="formulario" #actividadForm="ngForm">
+
+          <div>
+            <input type="hidden" name="id" [(ngModel)]="actividadService.actividad.idAct" />
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">Fecha:</span>
+              <input name="fecha" type="date" id="basic-url" class="form-control" />
+
+
+              <span class="input-group-text" id="basic-addon2">Nombre de la Actividad:</span>
+
+              <input 
+              name="nombre" 
+              type="text" 
+              class="form-control" 
+              [(ngModel)]="actividadService.actividad.nomAct"
+              id="basic-url" />
+            </div>
+
+            <label for="basic-url" class="form-label"></label>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">Responsable(s)</span>
+              <input 
+              name="responsable" 
+              type="text" 
+              class="form-control" 
+              id="basic-url" 
+              aria-describedby="basic-addon3"
+                [(ngModel)]="actividadService.actividad.idUsr" />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Lugar</span>
+              <input name="lugar" type="" class="form-control" id="basic-url"
+                [(ngModel)]="actividadService.actividad.idLug" />
+            </div>
+            <span>Descripcion del evento</span>
+            <div class="input-group">
+              <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+          </div>
+          <div class="confirmacion" *ngIf="alerta">
+            <!--Botones de confirmacion y cancelacion-->
+            <span>Desea guardar los cambios?</span>
+            <div class="boton2">
+              <button class="btn btn-secondary m-2" (click)="Alerta()">
+                no
+              </button>
+              <button class="btn btn-primary m-2" (click)="insAct(actividadForm); mostrar(); Ocultar(); Alerta()">
+                si
+              </button>
+            </div>
+          </div>
+        </form>
+        <button type="reset" class="btn btn-secondary m-2" (click)="formReset(actividadForm)">
+          <i class="fa-solid fa-broom-wide"></i>
+          Limpiar
+        </button>
+        <div class="opciones">
+          <button class="cancelar" (click)="mostrar(); Alerta(); Ocultar(); formReset(actividadForm)">
+            Cancelar
+          </button>
+          <button class="guardar" (click)="Alerta()">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>

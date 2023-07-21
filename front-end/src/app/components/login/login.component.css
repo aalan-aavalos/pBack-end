@@ -1,0 +1,39 @@
+body{
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.log{
+    align-items: center;
+    vertical-align: center;
+    background: white;
+    border-radius: 10px;
+    width: 31%;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.btn{
+    width: 100%;
+    background: rgb(26, 27, 55);
+    margin-bottom: 5px;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: rgb(26, 27, 55);
+}
+
+a:hover{
+    color: rgb(20, 116, 102);
+}
