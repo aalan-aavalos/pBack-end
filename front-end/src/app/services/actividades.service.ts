@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class ActividadesService {
   URL_API='http://localhost:3000/actividades/';
   public actividad:Actividad=
-  { id:0,fecha:'',nombre:'',lugar:'',responsable:''}
+  { idAct:0,fecha:'2023-07-20',nomAct:'',idLug:'null',idUsr:'null',descripcion:'sin descripcion'}
 
   actividades:Actividad[]=[]
 
@@ -21,10 +21,10 @@ export class ActividadesService {
     return this.http.post(this.URL_API,actividades)
   }
   updAct(actividades:Actividad){
-    return this.http.put(this.URL_API+actividades.id,actividades)
+    return this.http.put(this.URL_API+actividades.idAct,actividades)
   }
-  delAct(id:Actividad){
-    return this.http.delete(this.URL_API+id)
+  delAct(idAct:Actividad){
+    return this.http.delete(this.URL_API+idAct)
   }
 
 }

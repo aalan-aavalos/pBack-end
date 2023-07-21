@@ -3,7 +3,6 @@ import morgan from 'morgan';
 import IndexRoutes from './routes/index-routes';
 import ActividadesRoutes from "./routes/actividades-routes";
 import cors from 'cors';
-import actividadesRoutes from "./routes/actividades-routes";
 
 class Server{
     public app:Application;

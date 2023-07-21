@@ -1,7 +1,9 @@
 export interface Actividad{
-    id?:any;
+    idAct?:any;
     fecha: string,
-    nombre: string,
-    lugar: string,
-    responsable: string
+    nomAct: string,
+    idLug: any,
+    idUsr: any,
+    usr?:string,
+    descripcion?:string
 }

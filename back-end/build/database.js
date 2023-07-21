@@ -7,5 +7,5 @@ exports.pool = (0, promise_1.createPool)({
     user: 'root',
     password: '',
     port: 3306,
-    database: 'cont-Act'
+    database: 'contact'
 });

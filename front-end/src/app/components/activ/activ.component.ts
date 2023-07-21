@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ActivComponent implements OnInit {
 
-  constructor(public actividadService:ActividadesService, private renderer: Renderer2){}
+  constructor(public actividadService:ActividadesService){}
   
   ngOnInit(): void{
     this.getAct();
@@ -26,7 +26,7 @@ export class ActivComponent implements OnInit {
     )
   }
   insAct(form:NgForm){
-    if(form.value.id && form.value.id!==0){
+    if(form.value.idAct && form.value.idAct!==0){
       const resp= confirm('¿Guardar Cambios?');
       console.log('Actualizando')
       this.actividadService.updAct(form.value).subscribe(
@@ -96,5 +96,8 @@ export class ActivComponent implements OnInit {
       this.alerta=true;
     }
   }
+
+  responsables: string[] = ["2", "3", "4"];
+
 }
 

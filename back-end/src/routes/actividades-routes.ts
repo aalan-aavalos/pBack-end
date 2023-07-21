@@ -10,10 +10,10 @@ class ActRoutes{
 
     config():void{
         this.router.get('/',actividadesController.getAct);
-        this.router.get('/:id',actividadesController.getByIdAct);
+        this.router.get('/:idAct',actividadesController.getByIdAct);
         this.router.post('/',actividadesController.insertAct);
-        this.router.put('/:id',actividadesController.updateAct);
-        this.router.delete('/:id',actividadesController.deleteAct)
+        this.router.put('/:idAct',actividadesController.updateAct);
+        this.router.delete('/:idAct',actividadesController.deleteAct)
     }
 }
 

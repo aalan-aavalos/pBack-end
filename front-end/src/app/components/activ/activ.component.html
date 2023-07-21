@@ -20,12 +20,12 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of actividadService.actividades">
-              <td>{{ item.id }}</td>
+              <td>{{ item.idAct }}</td>
               <td>{{ item.fecha }}</td>
-              <td>{{ item.nombre }}</td>
-              <td>{{ item.responsable }}</td>
-              <td>{{ item.lugar }}</td>
-              <td></td>
+              <td>{{ item.nomAct }}</td>
+              <td>{{ item.usr }}</td>
+              <td>{{ item.idLug }}</td>
+              <td>{{ item.descripcion }}</td>
               <td>
                 <a href="" target="_blank">
                   <i class="fa-sharp fa-regular fa-file"></i> </a
@@ -38,7 +38,7 @@
                 >
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button class="btn btn-danger btn-sm" (click)="delAct(item.id)">
+                <button class="btn btn-danger btn-sm" (click)="delAct(item.idAct)">
                   <i class="fa-solid fa-trash-can"></i>
                 </button>
               </td>
@@ -62,8 +62,8 @@
           <div>
             <input
               type="hidden"
-              name="id"
-              [(ngModel)]="actividadService.actividad.id"
+              name="idAct"
+              [(ngModel)]="actividadService.actividad.idAct"
             />
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon2">Fecha:</span>
@@ -72,15 +72,16 @@
                 type="date"
                 id="basic-url"
                 class="form-control"
+                [(ngModel)]="actividadService.actividad.fecha"
               />
               <span class="input-group-text" id="basic-addon2"
                 >Nombre de la Actividad:</span
               >
               <input
-                name="nombre"
+                name="nomAct"
                 type="text"
                 class="form-control"
-                [(ngModel)]="actividadService.actividad.nombre"
+                [(ngModel)]="actividadService.actividad.nomAct"
                 id="basic-url"
               />
             </div>
@@ -90,31 +91,34 @@
               <span class="input-group-text" id="basic-addon3"
                 >Responsable(s)</span
               >
-              <input
-                name="responsable"
-                type="text"
-                class="form-control"
+              <select
+                name="idUsr"
+                type=""
+                class="form-select"
                 id="basic-url"
                 aria-describedby="basic-addon3"
-                [(ngModel)]="actividadService.actividad.responsable"
-              />
+                [(ngModel)]="actividadService.actividad.idUsr">
+                <option *ngFor="let responsable of responsables" [value]="responsable">{{responsable}}</option>
+              </select>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Lugar</span>
               <input
-                name="lugar"
+                name="idLug"
                 type=""
                 class="form-control"
                 id="basic-url"
-                [(ngModel)]="actividadService.actividad.lugar"
+                [(ngModel)]="actividadService.actividad.idLug"
               />
             </div>
             <span>Descripcion del evento</span>
             <div class="input-group">
               <textarea
+                name="descripcion"
                 class="form-control"
                 aria-label="With textarea"
+                [(ngModel)]="actividadService.actividad.descripcion"
               ></textarea>
             </div>
             <div class="input-group mb-3">
@@ -137,7 +141,7 @@
               </button>
               <button
                 class="btn btn-primary m-2"
-                (click)="insAct(actividadForm); mostrar(); Ocultar(); Alerta()"
+                (click)="insAct(actividadForm); mostrar(); Ocultar(); Alerta(); formReset(actividadForm)"
               >
                 si
               </button>
