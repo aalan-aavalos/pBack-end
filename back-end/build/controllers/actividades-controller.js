@@ -14,34 +14,35 @@ const database_1 = require("../database");
 class ActividadesController {
     getAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.pool.query('SELECT * FROM actividades');
+            const result = yield database_1.pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr');
             res.json(result[0]);
         });
     }
     getByIdAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const result = yield database_1.pool.query('SELECT * FROM actividades WHERE idAct=?', [id]);
+            const { idAct } = req.params;
+            const result = yield database_1.pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr where idAct= ?', [idAct]);
             res.json(result[0]);
         });
     }
     insertAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.pool.query('INSERT INTO actividades SET ?', [req.body]);
+            yield database_1.pool.query('INSERT INTO Actividades SET ?', [req.body]);
             res.json({ Message: 'Se inserto correctamente' });
         });
     }
     updateAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.pool.query('UPDATE actividades SET ? WHERE idAct=?', [req.body, id]);
+            const { idAct } = req.params;
+            yield database_1.pool.query('UPDATE Actividades SET ? WHERE idAct=?', [req.body, idAct]);
             res.json({ mesagge: 'Se ha actualizado con exito' });
         });
     }
     deleteAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.pool.query('DELETE FROM actividades WHERE idAct=?', [id]);
+            const { idAct } = req.params;
+            yield database_1.pool.query('DELETE FROM Actividades WHERE idAct=?', [idAct]);
+            yield database_1.pool.query('ALTER TABLE actividades AUTO_INCREMENT = 0');
             res.json({ Message: 'Se ha eliminado correctamente' });
         });
     }
