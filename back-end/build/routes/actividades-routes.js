@@ -9,10 +9,10 @@ class ActRoutes {
     }
     config() {
         this.router.get('/', actividades_controller_1.actividadesController.getAct);
-        this.router.get('/:id', actividades_controller_1.actividadesController.getByIdAct);
+        this.router.get('/:idAct', actividades_controller_1.actividadesController.getByIdAct);
         this.router.post('/', actividades_controller_1.actividadesController.insertAct);
-        this.router.put('/:id', actividades_controller_1.actividadesController.updateAct);
-        this.router.delete('/:id', actividades_controller_1.actividadesController.deleteAct);
+        this.router.put('/:idAct', actividades_controller_1.actividadesController.updateAct);
+        this.router.delete('/:idAct', actividades_controller_1.actividadesController.deleteAct);
     }
 }
 const actRoutes = new ActRoutes();

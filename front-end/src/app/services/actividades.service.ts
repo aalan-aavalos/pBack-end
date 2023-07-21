@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class ActividadesService {
   URL_API='http://localhost:3000/actividades/';
   public actividad:Actividad=
-  { idAct:0,fecha:'',nomAct:'',idUsr:'',idLug:'',descripcion:''}
+  { idAct:0,fecha:'2023-07-20',nomAct:'',idLug:'null',idUsr:'null',descripcion:'sin descripcion'}
 
   actividades:Actividad[]=[]
 

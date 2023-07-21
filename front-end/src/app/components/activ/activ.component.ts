@@ -8,9 +8,9 @@ import { NgForm } from '@angular/forms';
   templateUrl: './activ.component.html',
   styleUrls: ['./activ.component.css']
 })
-export class ActivComponent implements OnInit{
+export class ActivComponent implements OnInit {
 
-  constructor(public actividadService:ActividadesService, private renderer: Renderer2){}
+  constructor(public actividadService:ActividadesService){}
   
   ngOnInit(): void{
     this.getAct();
@@ -45,11 +45,11 @@ export class ActivComponent implements OnInit{
   updAct( actividad:Actividad){
     this.actividadService.actividad= actividad;
   }
-  delAct(idAct:any){
+  delAct(id:any){
     const resp= confirm('¿Estas seguro de eliminar esta actividad?');
     console.log('eliminando');
     if(resp){
-      this.actividadService.delAct(idAct).subscribe(
+      this.actividadService.delAct(id).subscribe(
        (res)=>{
          this.getAct();
        },
@@ -96,5 +96,8 @@ export class ActivComponent implements OnInit{
       this.alerta=true;
     }
   }
+
+  responsables: string[] = ["2", "3", "4"];
+
 }
 

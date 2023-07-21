@@ -1,0 +1,15 @@
+GET http://localhost:3000/actividades
+
+###
+
+POST http://localhost:3000/actividades
+Content-Type: application/json
+
+{
+    "fecha": "2023-02-08",
+    "nomAct": "Partido de Futbol",
+    "usr":"",
+    "idUsr": 2,
+    "idLug": 1,
+    "descripcion": "Partido de seleccion"
+}
