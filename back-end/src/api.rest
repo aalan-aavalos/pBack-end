@@ -1,0 +1,33 @@
+### Consultando todos los usuarios
+GET http://localhost:3000/login
+
+### Consultando un usuario
+GET http://localhost:3000/login/2
+
+### Consultando usuario
+GET http://localhost:3000/login/Alan/1234
+
+### Agregando un usuario
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "idUsr": 4,
+    "usr": "Pelusa",
+    "pwd": "123",
+    "rol": "usr"
+}
+
+### Actualizando un usuario
+PUT http://localhost:3000/login/4
+Content-Type: application/json
+
+{
+    "idUsr": 4,
+    "usr": "Pelusa",
+    "pwd": "456",
+    "rol": "usr"
+}
+
+### Eliminando un usuario
+DELETE http://localhost:3000/login/4

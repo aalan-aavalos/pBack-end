@@ -10,19 +10,30 @@
         </style>
 
         <div class="log">
-            <form action="/action_page.php">
+            <form #loginForm="ngForm">
                 <h1>Iniciar Sesión</h1>
 
                 <div class="mb-3 mt-3">
-                    <input type="email" class="form-control" id="email" placeholder="&#xf007;   Usuario" name="email">
+                    <input 
+                    name="usr" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="&#xf007;   Usuario"
+                    
+                    id="basic-url">
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="pwd" placeholder="&#xf084;   Contraseña"
-                        name="pswd">
+                    <input 
+                    name="pwd" 
+                    type="password" 
+                    class="form-control" 
+                    placeholder="&#xf084;   Contraseña"
+                    
+                    id="basic-url">
                 </div>
 
-                <button type="submit" class="btn btn-secondary" routerLink="/home-usr">Login</button>
+                <button type="submit" class="btn btn-secondary" (click)="valLog(loginForm); formReset(loginForm)">Login</button>
 
                 <p>Al iniciar, aceptas nuestras Condiciones de uso y Politica de privacidad.</p>
             </form>
