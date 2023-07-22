@@ -2,6 +2,7 @@ import { Actividad } from 'src/app/models/actividades';
 import { ActividadesService } from 'src/app/services/actividades.service';
 import { Component,OnInit,Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-activ',
@@ -10,10 +11,21 @@ import { NgForm } from '@angular/forms';
 })
 export class ActivComponent implements OnInit {
 
-  constructor(public actividadService:ActividadesService){}
+  constructor(public actividadService:ActividadesService, public userService:UsersService){}
   
   ngOnInit(): void{
     this.getAct();
+    this.getUsr();
+  }
+
+  getUsr(){
+    this.userService.getUsr().subscribe(
+        res=>{
+        this.userService.users=res;
+        console.log(res)
+      },
+    error=>console.log(error)
+    )
   }
 
   getAct(){
@@ -96,8 +108,6 @@ export class ActivComponent implements OnInit {
       this.alerta=true;
     }
   }
-
-  responsables: string[] = ["2", "3", "4"];
 
 }
 

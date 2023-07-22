@@ -30,6 +30,9 @@ td,th{
     width: 500px;
     height: 20px;
 }
+.numero{
+    display: none;
+}
 #gestion button{
     margin: 2px;
 }

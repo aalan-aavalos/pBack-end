@@ -3,7 +3,7 @@ import {pool} from "../database";
 
 class ActividadesController{
     async getAct(req:Request,res:Response){
-        const result=await pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr')
+        const result=await pool.query('SELECT * FROM vis_act;')
         res.json(result[0]);
     }
     async getByIdAct(req:Request,res:Response){

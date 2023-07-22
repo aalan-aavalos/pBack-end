@@ -14,7 +14,7 @@ const database_1 = require("../database");
 class ActividadesController {
     getAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr');
+            const result = yield database_1.pool.query('SELECT * FROM vis_act;');
             res.json(result[0]);
         });
     }
