@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2023 a las 06:44:57
+-- Tiempo de generación: 22-07-2023 a las 15:37:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -43,7 +43,8 @@ CREATE TABLE `actividades` (
 INSERT INTO `actividades` (`idAct`, `fecha`, `nomAct`, `idUsr`, `idLug`, `descripcion`) VALUES
 (1, '2023-07-21', 'Torneo Ajedrez', 4, 2, 'Gran torneo de ajedrez ven y diviertete'),
 (2, '2023-07-21', 'Partido de Futbol', 2, 1, 'Partido de seleccion'),
-(3, '2023-07-21', 'Ajedrez II', 4, 1, 'Gran torneo 2');
+(3, '2023-07-21', 'Ajedrez II', 4, 1, 'Gran torneo 2'),
+(4, '2023-07-28', 'Ajedrez III', 1, 1, 'a');
 
 -- --------------------------------------------------------
 
@@ -151,6 +152,32 @@ INSERT INTO `usuarios` (`idUsr`, `usr`, `pwd`, `rol`) VALUES
 (3, 'Josue', '5678', 'usr'),
 (4, 'Pelusa', '123', 'usr');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vis_act`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vis_act` (
+`idAct` int(11)
+,`fecha` date
+,`nomAct` varchar(50)
+,`usr` varchar(50)
+,`idUsr` int(11)
+,`nomLug` varchar(50)
+,`idLug` int(11)
+,`descripcion` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vis_act`
+--
+DROP TABLE IF EXISTS `vis_act`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vis_act`  AS SELECT `a`.`idAct` AS `idAct`, `a`.`fecha` AS `fecha`, `a`.`nomAct` AS `nomAct`, `u`.`usr` AS `usr`, `u`.`idUsr` AS `idUsr`, `l`.`nomLug` AS `nomLug`, `l`.`idLug` AS `idLug`, `a`.`descripcion` AS `descripcion` FROM ((`actividades` `a` join `usuarios` `u` on(`a`.`idUsr` = `u`.`idUsr`)) join `lugares` `l` on(`l`.`idLug` = `a`.`idLug`)) ORDER BY `a`.`fecha` ASC ;
+
 --
 -- Índices para tablas volcadas
 --
@@ -204,7 +231,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actividades`
 --
 ALTER TABLE `actividades`
-  MODIFY `idAct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencia`

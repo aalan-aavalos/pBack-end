@@ -3,11 +3,8 @@ import morgan from 'morgan';
 import IndexRoutes from './routes/index-routes';
 import ActividadesRoutes from "./routes/actividades-routes";
 import cors from 'cors';
-<<<<<<< HEAD
 import UsersRoutes from "./routes/users-routes";
-=======
 import loginRoutes from "./routes/login-routes";
->>>>>>> b53f714914eea8f5f51aee31da07e59f807020fa
 
 class Server{
     public app:Application;
@@ -30,11 +27,8 @@ class Server{
     routes():void{
         this.app.use('/',IndexRoutes);
         this.app.use('/actividades',ActividadesRoutes);
-<<<<<<< HEAD
         this.app.use('/usuarios',UsersRoutes)
-=======
         this.app.use('/login',loginRoutes);
->>>>>>> b53f714914eea8f5f51aee31da07e59f807020fa
     }
     start():void{
         this.app.listen(this.app.get('port'),()=>{
