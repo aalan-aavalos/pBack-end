@@ -27,21 +27,19 @@ export class LoginComponent{
       res=> {
         
         if(res.length == 0){
-          console.log('Mal');
+          console.log('Usuario o contraseña incorrecto');
           form.reset();
         }
         else{
           console.log('Sesion iniciada')
           if(res[0].rol == 'adm'){
             console.log('admin');
-            this.router.navigate(['home-usr']);
+            this.router.navigate(['home-adm']);
           }else{
             console.log('usr');
-            this.router.navigate(['home-adm']);
+            this.router.navigate(['home-usr']);
           }
         }
-
-        console.log(res)
       },
       err=> {
         console.log('Error al iniciar' + err)

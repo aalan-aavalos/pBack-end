@@ -26,8 +26,8 @@ class LoginnController{
         const {usr}=req.params;
     
         const result=await pool.query('SELECT * FROM usuarios WHERE usr=? AND pwd=?',[usr, req.body.pwd]);
-        console.log(result[0]);
-        res.json(result[0]);
+        
+        
     }
 
     
