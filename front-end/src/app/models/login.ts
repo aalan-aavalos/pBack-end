@@ -1,6 +1,6 @@
 export interface Login{
     idUsr?:any;
     usr:string,
-    psw:string,
+    pwd:string,
     rol:string
 }

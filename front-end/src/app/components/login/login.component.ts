@@ -1,36 +1,52 @@
-import { Component,OnInit,Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 
 import { LoginService } from 'src/app/services/login.service';
 import { Login } from 'src/app/models/login';
 
+import { Router, RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  constructor(public loginService:LoginService, private renderer: Renderer2){}
+export class LoginComponent{
+
+  constructor(public loginService:LoginService, private router: Router){
+  }
   
   ngOnInit(): void{
-    this.getUsr();
   }
 
-  getUsr(){
-    this.loginService.getUsr().subscribe(
-        res =>{
-        this.loginService.loginn = res;
+  valLog(form:NgForm){
+    console.log('Validando...')
+
+    this.loginService.valLog(form.value).subscribe(
+      res=> {
+        
+        if(res.length == 0){
+          console.log('Mal');
+          form.reset();
+        }
+        else{
+          console.log('Sesion iniciada')
+          if(res[0].rol == 'adm'){
+            console.log('admin');
+            this.router.navigate(['home-usr']);
+          }else{
+            console.log('usr');
+            this.router.navigate(['home-adm']);
+          }
+        }
+
         console.log(res)
       },
-    error=>console.log(error)
-    )
-  }
-
-  
-  valLog(form:NgForm){
-    console.log('Aqui se debe de validar')
-  }
+      err=> {
+        console.log('Error al iniciar' + err)
+      }
+    )}
   
   formReset(form:NgForm){
     this.loginService.login=form.value;

@@ -12,6 +12,7 @@ class ActRoutes{
         this.router.get('/',loginnController.getUsers);
         this.router.get('/:id',loginnController.getByIdUsr);
         this.router.get('/:usr/:pwd',loginnController.getUsr);
+        this.router.post('/:usr',loginnController.getUser);
         this.router.post('/',loginnController.insertUsr);
         this.router.put('/:id',loginnController.updateUsr);
         this.router.delete('/:id',loginnController.deleteUsr);

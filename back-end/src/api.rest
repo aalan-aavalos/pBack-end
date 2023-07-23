@@ -7,6 +7,14 @@ GET http://localhost:3000/login/2
 ### Consultando usuario
 GET http://localhost:3000/login/Alan/1234
 
+### Consultando con password
+POST http://localhost:3000/login/Alan
+Content-Type: application/json
+
+{
+    "pwd": "1234"
+}
+
 ### Agregando un usuario
 POST http://localhost:3000/login
 Content-Type: application/json

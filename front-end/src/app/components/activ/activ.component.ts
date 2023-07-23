@@ -57,6 +57,8 @@ export class ActivComponent implements OnInit {
   updAct( actividad:Actividad){
     this.actividadService.actividad= actividad;
   }
+
+  
   delAct(id:any){
     const resp= confirm('¿Estas seguro de eliminar esta actividad?');
     console.log('eliminando');

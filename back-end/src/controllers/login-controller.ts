@@ -22,10 +22,21 @@ class LoginnController{
         res.json(result[0]);    
     }
 
+    async getUser(req:Request,res:Response){
+        const {usr}=req.params;
+    
+        const result=await pool.query('SELECT * FROM usuarios WHERE usr=? AND pwd=?',[usr, req.body.pwd]);
+        console.log(result[0]);
+        res.json(result[0]);
+    }
+
+    
     async insertUsr(req:Request,res:Response){
         await pool.query('INSERT INTO usuarios SET ?',[req.body]);
         res.json({Message:'Se inserto correctamente'})
     }
+    
+   
     async updateUsr(req:Request,res:Response){
         const {id}=req.params;
         await pool.query('UPDATE usuarios SET ? WHERE idUsr=?',[req.body,id]);

@@ -33,6 +33,14 @@ class LoginnController {
             res.json(result[0]);
         });
     }
+    getUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { usr } = req.params;
+            const result = yield database_1.pool.query('SELECT * FROM usuarios WHERE usr=? AND pwd=?', [usr, req.body.pwd]);
+            console.log(result[0]);
+            res.json(result[0]);
+        });
+    }
     insertUsr(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.pool.query('INSERT INTO usuarios SET ?', [req.body]);

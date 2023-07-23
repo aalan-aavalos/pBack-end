@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class LoginService {
   URL_API='http://localhost:3000/login/';
   public login:Login=
-  { idUsr:0,usr:'',psw:'',rol:''}
+  { idUsr:0,usr:'',pwd:'',rol:''}
 
   loginn:Login[]=[]
 
@@ -17,6 +17,11 @@ export class LoginService {
   getUsr(){
     return this.http.get<Login[]>(this.URL_API)
   }
+
+  valLog(loginn:Login){
+    return this.http.post<Login[]>(this.URL_API+loginn.usr,loginn);
+  }
+
   insUsr(loginn:Login){
     return this.http.post(this.URL_API,loginn)
   }
