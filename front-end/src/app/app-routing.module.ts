@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisComponent } from './components/regis/regis.component';
 import { CalComponent } from './components/cal/cal.component';
 import { HomeAdmComponent } from './components/home-adm/home-adm.component';
+import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'cal-usr', component:CalUsrComponent},
   {path: 'activ', component:ActivComponent},
   {path: 'notif', component:NotifComponent},
-  {path: 'home-adm', component:HomeAdmComponent}
+  {path: 'home-adm', component:HomeAdmComponent},
+  {path: 'regis-usr', component: RegisUsrComponent}
 ];
 
 @NgModule({

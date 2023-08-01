@@ -20,8 +20,8 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "idUsr": 4,
-    "usr": "Pelusa",
+    //"idUsr": 4,
+    "usr": "Pelusasasa",
     "pwd": "123",
     "rol": "usr"
 }
@@ -31,11 +31,11 @@ PUT http://localhost:3000/login/4
 Content-Type: application/json
 
 {
-    "idUsr": 4,
-    "usr": "Pelusa",
+    "idUsr": 31,
+    "usr": "Pelusa 2",
     "pwd": "456",
     "rol": "usr"
 }
 
 ### Eliminando un usuario
-DELETE http://localhost:3000/login/4
+DELETE http://localhost:3000/login/314

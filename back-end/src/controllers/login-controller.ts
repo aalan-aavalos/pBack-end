@@ -19,15 +19,14 @@ class LoginnController{
         const {pwd}=req.params;
     
         const result=await pool.query('SELECT * FROM usuarios WHERE usr=? AND pwd=?',[usr, pwd]);
-        res.json(result[0]);    
+        res.json(result[0]);
     }
 
     async getUser(req:Request,res:Response){
         const {usr}=req.params;
     
         const result=await pool.query('SELECT * FROM usuarios WHERE usr=? AND pwd=?',[usr, req.body.pwd]);
-        
-        
+        res.json(result[0]);
     }
 
     

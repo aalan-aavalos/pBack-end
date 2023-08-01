@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { LoginService } from 'src/app/services/login.service';
-import { Login } from 'src/app/models/login';
 
 import { Router, RouterLink } from '@angular/router';
 
@@ -24,8 +23,7 @@ export class LoginComponent{
     console.log('Validando...')
 
     this.loginService.valLog(form.value).subscribe(
-      res=> {
-        
+      res => {
         if(res.length == 0){
           console.log('Usuario o contraseña incorrecto');
           form.reset();
@@ -33,7 +31,7 @@ export class LoginComponent{
         else{
           console.log('Sesion iniciada')
           if(res[0].rol == 'adm'){
-            console.log('admin');
+            console.log('admin'); 
             this.router.navigate(['home-adm']);
           }else{
             console.log('usr');
@@ -41,13 +39,15 @@ export class LoginComponent{
           }
         }
       },
-      err=> {
+      err => {
         console.log('Error al iniciar' + err)
       }
-    )}
+    )
+    console.log('Me voy pa aca y no valido')
+  }
   
   formReset(form:NgForm){
-    this.loginService.login=form.value;
+    this.loginService.login = form.value;
     form.reset();
   }
 }

@@ -19,6 +19,7 @@ import { CalComponent } from './components/cal/cal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeAdmComponent } from './components/home-adm/home-adm.component';
 import { SidebarAdmComponent } from './components/sidebar-adm/sidebar-adm.component';
+import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SidebarAdmComponent } from './components/sidebar-adm/sidebar-adm.compon
     RegisComponent,
     CalComponent,
     HomeAdmComponent,
-    SidebarAdmComponent
+    SidebarAdmComponent,
+    RegisUsrComponent
   ],
   imports: [
     BrowserModule,

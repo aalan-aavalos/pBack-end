@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar-lec></app-sidebar-lec>
+    </div>
+    <div class="col-md-10 cont">
+        <style>
+            input,
+            select {
+                font-family: Arial, FontAwesome
+            }
+        </style>
+
+        <div class="reg">
+            <form #regisForm="ngForm" (ngSubmit)="insUsr(regisForm)">
+                <h1>Registrate</h1>
+
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" placeholder="&#xf007;   Nombre de Usuario" name="usr"
+                        [(ngModel)]="loginService.login.usr" id="basic-url" required #usr="ngModel">
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" placeholder="Example placeholder" name="rol"
+                        [(ngModel)]="loginService.login.rol" id="basic-url" #rol="ngModel" required>
+                        <option selected disabled>&#xf0c9; Selecciona el Rol</option>
+                        <option value="adm">&#xf007; Admin</option>
+                        <option value="usr">&#xf4fe; Usuario</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="&#xf084;   Contraseña" name="pwd"
+                        [(ngModel)]="loginService.login.pwd" id="pwd" #rol="ngModel" required>
+                </div>
+
+                <button type="submit" class="btn btn-secondary position-relative"
+                    [disabled]="regisForm.invalid">Registrarse
+                    <span class="position-absolute top-50 start-1 translate-middle badge bg-danger text-dark"
+                        [hidden]="regisForm.valid">
+                        Necesitas llenar todos los campos
+                    </span>
+                </button>
+
+                <p>Al registrarse, aceptas nuestras Condiciones de uso y Politica de privacidad.</p>
+                <p>¿Ya tienes cuenta?<a href="/login"><strong> Inicia Sesion</strong></a></p>
+            </form>
+        </div>
+    </div>
+</div>
