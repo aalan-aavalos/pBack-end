@@ -8,12 +8,12 @@ class ActividadesController{
     }
     async getByIdAct(req:Request,res:Response){
         const {idAct}=req.params;
-        const result=await pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr where idAct= ?',[idAct]);
+        const result=await pool.query('SELECT * From vis_act where idAct= ?',[idAct]);
         res.json(result[0]);
     }
     async insertAct(req:Request,res:Response){
         await pool.query('INSERT INTO Actividades SET ?',[req.body]);
-        res.json({Message:'Se inserto correctamente'})
+        res.json({Message:'Se inserto correctamente'});
     }
     async updateAct(req:Request,res:Response){
         const {idAct}=req.params;
@@ -23,7 +23,6 @@ class ActividadesController{
     async deleteAct(req:Request,res:Response){
         const {idAct}=req.params;
         await pool.query('DELETE FROM Actividades WHERE idAct=?',[idAct]);
-        await pool.query('ALTER TABLE actividades AUTO_INCREMENT = 0');
         res.json({Message:'Se ha eliminado correctamente'});
     }
     

@@ -1,0 +1,39 @@
+<div class="wrapper-calendar">
+    <div class="header-calendar">
+      <div>
+        <button (click)="changeMonth(-1)" class="btn-prev">
+          <i class="fa-solid fa-caret-left fa-2xl" style="color: #0f7dbd"></i>
+        </button>
+      </div>
+      <h1>{{ dateSelect | date : "MMMM, yyyy" }}</h1>
+      <div>
+        <button (click)="changeMonth(1)" class="btn-next">
+          <i class="fa-solid fa-caret-right fa-2xl" style="color: #0f7dbd"></i>
+        </button>
+      </div>
+    </div>
+    <ol>
+      <li *ngFor="let day of week" class="day-name">{{ day | slice : 0 : 3 }}</li>
+  
+      <li
+        class="number"
+        (click)="clickDay(day)"
+        [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+        [class.event-day]="hasEvent(day)"
+        *ngFor="let day of monthSelect; let first = first"
+      >
+        <span>{{ day?.value }}</span>
+      </li>
+    </ol>
+  </div>
+  
+  <hr />
+  <div>Fecha: {{ dateValue | fechaEsp }}</div>
+  <div class="event-info" *ngIf="eventInfoVisible" >
+    <h3>{{ selectedEvent?.nomAct }}</h3>
+    <p>Encargado: {{selectedEvent?.usr}}</p>
+    <p>{{ selectedEvent?.descripcion }}</p>
+    <p>{{ selectedEvent?.nomLug }}</p>
+    <button (click)="cerrarInfoEvent()">Cerrar</button>
+  </div>
+  

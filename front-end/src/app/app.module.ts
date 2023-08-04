@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeAdmComponent } from './components/home-adm/home-adm.component';
 import { SidebarAdmComponent } from './components/sidebar-adm/sidebar-adm.component';
 import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
+import { FechaEspPipe } from './pipes/fecha-esp.pipe';
+import { CalendarioComponent } from './components/calendario/calendario.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
     CalComponent,
     HomeAdmComponent,
     SidebarAdmComponent,
-    RegisUsrComponent
+    RegisUsrComponent,
+    FechaEspPipe,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,

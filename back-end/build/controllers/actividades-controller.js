@@ -21,7 +21,7 @@ class ActividadesController {
     getByIdAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { idAct } = req.params;
-            const result = yield database_1.pool.query('SELECT idAct, fecha, nomAct, usr, idLug, descripcion FROM Actividades a inner join usuarios u ON a.idUsr=u.idUsr where idAct= ?', [idAct]);
+            const result = yield database_1.pool.query('SELECT * From vis_act where idAct= ?', [idAct]);
             res.json(result[0]);
         });
     }
@@ -42,7 +42,6 @@ class ActividadesController {
         return __awaiter(this, void 0, void 0, function* () {
             const { idAct } = req.params;
             yield database_1.pool.query('DELETE FROM Actividades WHERE idAct=?', [idAct]);
-            yield database_1.pool.query('ALTER TABLE actividades AUTO_INCREMENT = 0');
             res.json({ Message: 'Se ha eliminado correctamente' });
         });
     }

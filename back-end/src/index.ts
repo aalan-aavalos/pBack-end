@@ -5,6 +5,7 @@ import ActividadesRoutes from "./routes/actividades-routes";
 import cors from 'cors';
 import UsersRoutes from "./routes/users-routes";
 import loginRoutes from "./routes/login-routes";
+import lugaresRoutes from "./routes/lugares-routes";
 
 class Server{
     public app:Application;
@@ -29,6 +30,7 @@ class Server{
         this.app.use('/actividades',ActividadesRoutes);
         this.app.use('/usuarios',UsersRoutes)
         this.app.use('/login',loginRoutes);
+        this.app.use('/lugares',lugaresRoutes);
     }
     start():void{
         this.app.listen(this.app.get('port'),()=>{

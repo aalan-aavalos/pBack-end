@@ -3,6 +3,7 @@ import { ActividadesService } from 'src/app/services/actividades.service';
 import { Component,OnInit,Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
+import { LugaresService } from 'src/app/services/lugares.service';
 
 @Component({
   selector: 'app-activ',
@@ -11,11 +12,22 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ActivComponent implements OnInit {
 
-  constructor(public actividadService:ActividadesService, public userService:UsersService){}
+  constructor(public actividadService:ActividadesService, public userService:UsersService, public lugaresService:LugaresService){}
   
   ngOnInit(): void{
     this.getAct();
     this.getUsr();
+    this.getLugar();
+  }
+
+  getLugar(){
+    this.lugaresService.getLug().subscribe(
+      (res)=>{
+        this.lugaresService.lugares=res;
+        console.log(res);
+      },
+      (error) => console.error()   
+    );
   }
 
   getUsr(){
@@ -110,6 +122,5 @@ export class ActivComponent implements OnInit {
       this.alerta=true;
     }
   }
-
 }
 
