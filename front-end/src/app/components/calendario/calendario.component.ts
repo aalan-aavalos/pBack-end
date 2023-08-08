@@ -57,8 +57,23 @@ export class CalendarioComponent implements OnInit {
     const monthYear = this.dateSelect.format('YYYY-MM');
     const parse = `${monthYear}-${day?.value.toString().padStart(2, '0')}`;
     return this.eventos.some(evento => evento.fecha.startsWith(parse));
-  }  
-
+  }
+  
+  hoy(day: any): boolean {
+    const hoy = new Date();
+    //hoy.setDate(hoy.getDate() - 1);
+    const diaStr = hoy.toISOString().slice(0, 10); // Obtener fecha actual en formato 'YYYY-MM-DD'
+    const dia = `${diaStr}`;
+    const monthYear = this.dateSelect.format('YYYY-MM');
+    const parse = `${monthYear}-${day?.value.toString().padStart(2, '0')}`;
+    console.log(hoy);
+  
+    if (dia === parse) {
+      return true;
+    }
+    return false;
+  }
+  
 
   getDaysFromDate(month: number, year: number) {
 
@@ -110,7 +125,6 @@ export class CalendarioComponent implements OnInit {
     } else {
       this.eventInfoVisible = false;
     }
-    console.log(this.selectedEvent)
 
     console.log(day)
     console.log(this.eventInfoVisible)

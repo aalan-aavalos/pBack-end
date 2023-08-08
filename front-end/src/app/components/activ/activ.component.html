@@ -10,16 +10,16 @@
           <thead>
             <tr>
               <th class="numero">#</th>
-              <th>Fecha</th>
-              <th>Nombre</th>
-              <th>Responsable</th>
-              <th>Lugar</th>
-              <th>Descripcion</th>
-              <th>programa</th>
-              <th id="gestion">Gestion</th>
+              <th><p>Fecha</p></th>
+              <th><p>Nombre</p></th>
+              <th><p>Responsable</p></th>
+              <th><p>Lugar</p></th>
+              <th><p>Descripcion</p></th>
+              <th><p>programa</p></th>
+              <th id="gestion"><p>Gestion</p></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="infoTab">
             <tr *ngFor="let item of actividadService.actividades">
               <td class="numero">{{ item.idAct }}</td>
               <td>{{ item.fecha | fechaEsp }}</td>

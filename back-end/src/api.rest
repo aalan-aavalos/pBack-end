@@ -42,3 +42,39 @@ DELETE http://localhost:3000/login/314
 
 ###Consulta de lugares
 GET http://localhost:3000/lugares
+
+###Consulta de Actividades
+GET http://localhost:3000/actividades
+
+###Actividades por ID
+GET http://localhost:3000/actividades/28
+
+########actividades###########
+
+### Instertar Actividades
+POST http://localhost:3000/actividades
+Content-Type: application/json
+
+{
+    "fecha": "2023-12-20",
+    "nomAct": "Pastorela",
+    "idUsr": 3,
+    "idLug": 3,
+    "descripcion": "sin descripcion"
+  }
+
+### Eliminar Actividad
+DELETE  http://localhost:3000/actividades/23
+
+### Actualizar actividad
+PUT http://localhost:3000/actividades/28
+Content-Type: application/json
+
+{
+    "idAct": 28,
+    "fecha": "2023-12-20T06:00:00.000Z",
+    "nomAct": "Pastorela",
+    "idUsr": 3,
+    "idLug": 3,
+    "descripcion": "Pastorela de fin de año"
+  }
