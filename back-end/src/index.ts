@@ -6,7 +6,8 @@ import cors from 'cors';
 import UsersRoutes from "./routes/users-routes";
 import loginRoutes from "./routes/login-routes";
 import lugaresRoutes from "./routes/lugares-routes";
-
+import ParticipantesRoutes from "./routes/Participantes-routes";
+import asistenciaRoutes from "./routes/asistencia-routes";
 class Server{
     public app:Application;
 
@@ -31,6 +32,8 @@ class Server{
         this.app.use('/usuarios',UsersRoutes)
         this.app.use('/login',loginRoutes);
         this.app.use('/lugares',lugaresRoutes);
+        this.app.use('/participantes',ParticipantesRoutes);
+        this.app.use('/asistencia',asistenciaRoutes);
     }
     start():void{
         this.app.listen(this.app.get('port'),()=>{

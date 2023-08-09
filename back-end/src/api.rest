@@ -78,3 +78,38 @@ Content-Type: application/json
     "idLug": 3,
     "descripcion": "Pastorela de fin de año"
   }
+### Consultando participantes 
+GET http://localhost:3000/participantes
+
+###Consulta por id 
+GET http://localhost:3000/participantes/1222100413
+
+### Insertar
+POST http://localhost:3000/participantes
+Content-Type: application/json
+
+{
+    "numCon": 1222100513,
+    "nomPar": "Juan",
+    "grupo": "GMI0532",
+    "idCar": "3"
+}
+
+### Actualizar
+PUT http://localhost:3000/participantes/1222100513
+Content-Type: application/json
+
+{
+    "nomPar": "Juan",
+    "grupo": "GMI0531",
+    "idCar": "2"
+}
+
+### Eliminar
+DELETE http://localhost:3000/participantes/1222100513
+
+### Consulta asistencia
+GET http://localhost:3000/asistencia
+
+###Consulta control
+GET http://localhost:3000/asistencia/1222100413
