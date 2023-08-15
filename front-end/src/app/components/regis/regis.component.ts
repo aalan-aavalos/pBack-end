@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActividadesService } from 'src/app/services/actividades.service';
 import {ParticipantesService} from 'src/app/services/participantes.service';
 import { CarreraService } from 'src/app/services/carrera.services';
-
+import { AsistenciaService } from 'src/app/services/asistencia.service';
 @Component({
   selector: 'app-regis',
   templateUrl: './regis.component.html',
@@ -13,7 +13,10 @@ export class RegisComponent implements OnInit{
 
   constructor(public actividadService:ActividadesService, 
               public carreraService:CarreraService, 
-              public participantesService:ParticipantesService){}
+              public participantesService:ParticipantesService,
+              public AsistenciaService:AsistenciaService
+              ){}
+          
 
   ngOnInit(): void {
     this.getAct();
@@ -49,9 +52,5 @@ export class RegisComponent implements OnInit{
       },
     error=>console.log(error)
     )
-  }
-
-  agAsist(form:NgForm){
-    if(form.value.idPar)
   }
 }

@@ -20,8 +20,5 @@ class AsisteController {
             res.json({ Message: 'Se insertó correctamente' });
         }
     }
-    
-    
-
 
 export const asistenciaController = new AsisteController();

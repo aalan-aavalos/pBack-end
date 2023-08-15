@@ -119,6 +119,7 @@ PUT http://localhost:3000/asistencia
 Content-Type: application/json
 
 {
-    "numCon":"1222100410",
-    "idAct": 2
+    "numCon":"1222100413",
+    "idAct": 4,
+    "idAsi": 9
 }
