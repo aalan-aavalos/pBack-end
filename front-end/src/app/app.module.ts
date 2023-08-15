@@ -24,6 +24,7 @@ import { FechaEspPipe } from './pipes/fecha-esp.pipe';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { ActivAdmComponent } from './components/activ-adm/activ-adm.component';
 import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
+import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
     FechaEspPipe,
     CalendarioComponent,
     ActivAdmComponent,
-    NotifAdmComponent
+    NotifAdmComponent,
+    CalAdmComponent
   ],
   imports: [
     BrowserModule,

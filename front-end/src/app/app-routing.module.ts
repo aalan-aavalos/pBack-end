@@ -12,6 +12,7 @@ import { HomeAdmComponent } from './components/home-adm/home-adm.component';
 import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
 import { ActivAdmComponent } from './components/activ-adm/activ-adm.component';
 import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
+import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'home-adm', component:HomeAdmComponent},
   {path: 'regis-usr', component:RegisUsrComponent},
   {path: 'activ-adm', component:ActivAdmComponent},
-  {path: 'notif-adm', component:NotifAdmComponent}
+  {path: 'notif-adm', component:NotifAdmComponent},
+  {path: 'cal-adm', component:CalAdmComponent}
 ];
 
 @NgModule({
