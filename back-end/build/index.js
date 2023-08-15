@@ -13,6 +13,7 @@ const login_routes_1 = __importDefault(require("./routes/login-routes"));
 const lugares_routes_1 = __importDefault(require("./routes/lugares-routes"));
 const Participantes_routes_1 = __importDefault(require("./routes/Participantes-routes"));
 const asistencia_routes_1 = __importDefault(require("./routes/asistencia-routes"));
+const carreras_routes_1 = __importDefault(require("./routes/carreras-routes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -34,6 +35,7 @@ class Server {
         this.app.use('/lugares', lugares_routes_1.default);
         this.app.use('/participantes', Participantes_routes_1.default);
         this.app.use('/asistencia', asistencia_routes_1.default);
+        this.app.use('/carreras', carreras_routes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -113,3 +113,12 @@ GET http://localhost:3000/asistencia
 
 ###Consulta control
 GET http://localhost:3000/asistencia/1222100413
+
+###
+PUT http://localhost:3000/asistencia
+Content-Type: application/json
+
+{
+    "numCon":"1222100410",
+    "idAct": 2
+}

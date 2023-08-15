@@ -8,6 +8,7 @@ import loginRoutes from "./routes/login-routes";
 import lugaresRoutes from "./routes/lugares-routes";
 import ParticipantesRoutes from "./routes/Participantes-routes";
 import asistenciaRoutes from "./routes/asistencia-routes";
+import carrerasRoutes from "./routes/carreras-routes";
 class Server{
     public app:Application;
 
@@ -34,6 +35,7 @@ class Server{
         this.app.use('/lugares',lugaresRoutes);
         this.app.use('/participantes',ParticipantesRoutes);
         this.app.use('/asistencia',asistenciaRoutes);
+        this.app.use('/carreras', carrerasRoutes);
     }
     start():void{
         this.app.listen(this.app.get('port'),()=>{

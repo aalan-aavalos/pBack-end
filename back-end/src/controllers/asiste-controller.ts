@@ -13,6 +13,15 @@ class AsisteController {
         const result = await pool.query('SELECT * FROM asistencia WHERE numCon = ?', [numCon]);
         res.json(result[0]); 
     }
-}
+
+    async agAsis(req: Request, res: Response) {
+    
+            await pool.query('INSERT INTO Asistencia SET ?', [req.body]);
+            res.json({ Message: 'Se insertó correctamente' });
+        }
+    }
+    
+    
+
 
 export const asistenciaController = new AsisteController();

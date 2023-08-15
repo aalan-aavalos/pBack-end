@@ -12,6 +12,7 @@ config():void{
      
     this.router.get('/',asistenciaController.getasis);
     this.router.get('/:numCon',asistenciaController.getByIdasis);
+    this.router.put('/',asistenciaController.agAsis)
 }
 }
 
