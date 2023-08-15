@@ -22,6 +22,8 @@ import { SidebarAdmComponent } from './components/sidebar-adm/sidebar-adm.compon
 import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
 import { FechaEspPipe } from './pipes/fecha-esp.pipe';
 import { CalendarioComponent } from './components/calendario/calendario.component';
+import { ActivAdmComponent } from './components/activ-adm/activ-adm.component';
+import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CalendarioComponent } from './components/calendario/calendario.componen
     SidebarAdmComponent,
     RegisUsrComponent,
     FechaEspPipe,
-    CalendarioComponent
+    CalendarioComponent,
+    ActivAdmComponent,
+    NotifAdmComponent
   ],
   imports: [
     BrowserModule,

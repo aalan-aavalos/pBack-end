@@ -10,6 +10,8 @@ import { RegisComponent } from './components/regis/regis.component';
 import { CalComponent } from './components/cal/cal.component';
 import { HomeAdmComponent } from './components/home-adm/home-adm.component';
 import { RegisUsrComponent } from './components/regis-usr/regis-usr.component';
+import { ActivAdmComponent } from './components/activ-adm/activ-adm.component';
+import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'activ', component:ActivComponent},
   {path: 'notif', component:NotifComponent},
   {path: 'home-adm', component:HomeAdmComponent},
-  {path: 'regis-usr', component: RegisUsrComponent}
+  {path: 'regis-usr', component:RegisUsrComponent},
+  {path: 'activ-adm', component:ActivAdmComponent},
+  {path: 'notif-adm', component:NotifAdmComponent}
 ];
 
 @NgModule({
