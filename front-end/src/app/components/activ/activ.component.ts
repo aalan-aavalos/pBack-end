@@ -49,40 +49,6 @@ export class ActivComponent implements OnInit {
     error=>console.log(error)
     )
   }
-  insAct(form:NgForm){
-    if(form.value.idAct && form.value.idAct!==0){
-      const resp= confirm('¿Guardar Cambios?');
-      console.log('Actualizando')
-      this.actividadService.updAct(form.value).subscribe(
-       res=> console.log(res),
-       error=> console.log(error)
-      );
-    }else{
-   this.actividadService.insAct(form.value).subscribe(
-     res=> {
-       this.getAct();
-       form.reset();
-     },
-     err=> console.log(err)
-   )}
-  }
-  updAct( actividad:Actividad){
-    this.actividadService.actividad= actividad;
-  }
-
-  
-  delAct(id:any){
-    const resp= confirm('¿Estas seguro de eliminar esta actividad?');
-    console.log('eliminando');
-    if(resp){
-      this.actividadService.delAct(id).subscribe(
-       (res)=>{
-         this.getAct();
-       },
-       (err)=> console.log(err)
-      );
-    }
-  }
 
   formReset(form:NgForm){
     this.actividadService.actividad=form.value;
