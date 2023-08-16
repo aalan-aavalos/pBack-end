@@ -121,5 +121,4 @@ Content-Type: application/json
 {
     "numCon":"1222100413",
     "idAct": 4,
-    "idAsi": 9
 }

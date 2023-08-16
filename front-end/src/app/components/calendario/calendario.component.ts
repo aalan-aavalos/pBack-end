@@ -26,27 +26,27 @@ export class CalendarioComponent implements OnInit {
   eventos: Actividad[] = [];
   monthSelect: any[] = [];
   dateSelect: any;
-  dateValue: any;
+  dateValue: any= new Date();
 
   constructor(private actividadService:ActividadesService ) {
 
   }
 
   ngOnInit(): void {
-    const fechaActual=new Date;
+    const fechaActual=new Date();
     const mes =fechaActual.getMonth();
     const año =fechaActual.getFullYear();
     this.getDaysFromDate(mes+1,año);
     this.getEventos();
-    console.log(this.eventos)
+    // console.log(this.eventos)
   }
 
   getEventos(): void{
     this.actividadService.getAct().subscribe(
         (res: Actividad[])=>{
         this.eventos=res;
-        console.log(this.eventos)
-        console.log(res)
+        // console.log(this.eventos)
+        // console.log(res)
       },
     error=>console.log(error)
     )
@@ -61,12 +61,13 @@ export class CalendarioComponent implements OnInit {
   
   hoy(day: any): boolean {
     const hoy = new Date();
-    //hoy.setDate(hoy.getDate() - 1);
+    hoy.setDate(hoy.getDate() - 1);
     const diaStr = hoy.toISOString().slice(0, 10); // Obtener fecha actual en formato 'YYYY-MM-DD'
     const dia = `${diaStr}`;
     const monthYear = this.dateSelect.format('YYYY-MM');
     const parse = `${monthYear}-${day?.value.toString().padStart(2, '0')}`;
     console.log(hoy);
+    console.log(parse)
   
     if (dia === parse) {
       return true;
@@ -112,11 +113,11 @@ export class CalendarioComponent implements OnInit {
     const parse = `${monthYear}-${day.value.toString().padStart(2, '0')}`
     const objectDate = moment(parse)
     this.dateValue = objectDate;
-    console.log(parse)
+    // console.log(parse)
 
     // Buscar eventos para la fecha seleccionada
     const eventosDia = this.eventos.filter(evento => moment(evento.fecha).isSame(objectDate, 'day'))
-    console.log(eventosDia)
+    // console.log(eventosDia)
 
     // Mostrar la información del primer evento si hay eventos para este día
     if (eventosDia.length > 0) {
@@ -126,8 +127,8 @@ export class CalendarioComponent implements OnInit {
       this.eventInfoVisible = false;
     }
 
-    console.log(day)
-    console.log(this.eventInfoVisible)
+    // console.log(day)
+    // console.log(this.eventInfoVisible)
 
   }
 

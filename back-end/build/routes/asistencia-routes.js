@@ -10,7 +10,7 @@ class AsistRoutes {
     config() {
         this.router.get('/', asiste_controller_1.asistenciaController.getasis);
         this.router.get('/:numCon', asiste_controller_1.asistenciaController.getByIdasis);
-        this.router.put('/', asiste_controller_1.asistenciaController.agAsis);
+        this.router.post('/', asiste_controller_1.asistenciaController.agAsis);
     }
 }
 const parRoutes = new AsistRoutes();
