@@ -9,27 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.asistenciaController = void 0;
+exports.carreraController = void 0;
 const database_1 = require("../database");
-class AsisteController {
-    getasis(req, res) {
+class CarreraController {
+    getCar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.pool.query('SELECT * FROM asistencia;');
+            const result = yield database_1.pool.query('Select * From carrera;');
             res.json(result[0]);
-        });
-    }
-    getByIdasis(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { numCon } = req.params;
-            const result = yield database_1.pool.query('SELECT * FROM asistencia WHERE numCon = ?', [numCon]);
-            res.json(result[0]);
-        });
-    }
-    agAsis(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.pool.query('INSERT INTO Asistencia SET ?', [req.body]);
-            res.json({ Message: 'Se insertó correctamente' });
         });
     }
 }
-exports.asistenciaController = new AsisteController();
+exports.carreraController = new CarreraController;

@@ -6,7 +6,7 @@
           <i class="fa-solid fa-caret-left fa-2xl" style="color: #0f7dbd"></i>
         </button>
       </div>
-      <h1>{{ dateSelect | date : "MMMM, yyyy" }}</h1>
+      <h1 id="MesActual">{{ dateSelect | fechaEsp: false }}</h1>
       <div>
         <button (click)="changeMonth(1)" class="btn-next">
           <i class="fa-solid fa-caret-right fa-2xl" style="color: #0f7dbd"></i>

@@ -10,6 +10,11 @@
     border: solid 1px #eaeaea;
     box-shadow: 0 0 10px #e4e4e4;
   }
+  #MesActual{
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
   div {
     text-align: center;
     width: 600px;
