@@ -6,6 +6,6 @@ export const pool =createPool(
         user:'root',
         password:'',
         port:3306,
-        database:'p04cont-Act'
+        database:'pcont-Act'
     }
 )

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2023 a las 16:06:15
+-- Tiempo de generación: 17-08-2023 a las 21:01:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `p03cont-act`
+-- Base de datos: `p04cont-act`
 --
 
 -- --------------------------------------------------------
@@ -41,9 +41,7 @@ CREATE TABLE `actividades` (
 --
 
 INSERT INTO `actividades` (`idAct`, `fecha`, `nomAct`, `idUsr`, `idLug`, `descripcion`) VALUES
-(2, '2023-07-21', 'Partido de Futbol', 4, 1, 'Partido de seleccion'),
-(4, '2023-07-28', 'Ajedrez III', 3, 2, 'a'),
-(5, '2023-07-27', 'Ajedrez II', 1, 2, 'AAA');
+(10, '2023-08-16', 'Exposicion', 2, 2, 'Una gran exposicion! asistan');
 
 -- --------------------------------------------------------
 
@@ -62,8 +60,7 @@ CREATE TABLE `asistencia` (
 --
 
 INSERT INTO `asistencia` (`idAsi`, `numCon`, `idAct`) VALUES
-(2, '1222100426', 2),
-(3, '1222100413', 2);
+(8, '1222100427', 10);
 
 -- --------------------------------------------------------
 
@@ -82,9 +79,26 @@ CREATE TABLE `carrera` (
 --
 
 INSERT INTO `carrera` (`idCar`, `nomCar`, `area`) VALUES
-(1, 'TSU en Desarrollo de Software Multiplataforma', 'TI'),
-(2, 'TSU en Desarrollo de Negocios Área Mercadotécnia', 'EA'),
-(3, 'TSU en Mecatrónica Área Instalaciones Eléctricas Eficientes', 'IEE');
+(4, 'TSU en Administración Área Capital Humano', 'EA'),
+(5, 'TSU en Desarrollo de Negocios Área Mercadotécnia', 'EA'),
+(6, 'TSU en Contaduría ', 'EA'),
+(7, 'TSU en Turismo', 'EA'),
+(8, 'Licenciatura en Gestión del Capital Humano', 'EA'),
+(9, 'Licenciatura en Innovación de Negocios y Mercadotecnia', 'EA'),
+(10, 'Licenciatura en Contaduría', 'EA'),
+(11, 'TSU en Desarrollo de Software Multiplataforma', 'TI'),
+(12, 'Ingeniería en Desarrollo y Gestión de Software', 'TI'),
+(13, 'TSU en Infraestructura de Redes Digitales ', 'TI'),
+(14, 'Ingeniería en Redes Inteligentes y Ciberseguridad', 'TI'),
+(15, 'TSU en Entornos Virtuales y Negocios Digitales', 'TI'),
+(16, 'Ingeniería en Entornos Virtuales y Negocios Digitales', 'TI'),
+(17, 'TSU en Diseño Digital ', 'TI'),
+(18, 'Licenciatura en Diseño Digital y Producción Audiovisual', 'TI'),
+(19, 'TSU en Mecatrónica Área Instalaciones Eléctricas Eficientes', 'IEE'),
+(20, 'TSU en Procesos Industriales Área Manufactura', 'IEE'),
+(21, 'TSU en Energias Renovables Área Calidad y Ahorro de Energía', 'IEE'),
+(22, 'Ingeniería en Mecatrónica', 'IEE'),
+(23, 'Ingeniería en Tecnologías de la Producción', 'IEE');
 
 -- --------------------------------------------------------
 
@@ -102,8 +116,12 @@ CREATE TABLE `lugares` (
 --
 
 INSERT INTO `lugares` (`idLug`, `nomLug`) VALUES
-(1, 'Cancha de Futboll'),
-(2, 'Sala de Ajedrez');
+(1, 'Cancha de Futbol'),
+(2, 'Sala de Ajedrez'),
+(3, 'Cancha de Basket'),
+(4, 'Pista de Atletismo'),
+(5, 'Salon deTaekwondo'),
+(6, 'Gimanasio ');
 
 -- --------------------------------------------------------
 
@@ -123,9 +141,7 @@ CREATE TABLE `partipantes` (
 --
 
 INSERT INTO `partipantes` (`numCon`, `nomPar`, `grupo`, `idCar`) VALUES
-('1222100413', 'Miguel', 'GMI0532', 3),
-('1222100426', 'Alan', 'GDS0533', 1),
-('1222100485', 'Josue', 'GDN0533', 2);
+('1222100427', 'Juan', 'GDS0533', 11);
 
 -- --------------------------------------------------------
 
@@ -146,9 +162,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`idUsr`, `usr`, `pwd`, `rol`) VALUES
 (1, 'Alan', '1234', 'adm'),
-(2, 'Miguel', '4321', 'usr'),
-(3, 'Josue', '5678', 'usr'),
-(4, 'Pelusa', '123', 'usr');
+(2, 'Diego', '4321', 'usr'),
+(32, 'Adm', '1111', 'adm');
 
 -- --------------------------------------------------------
 
@@ -229,31 +244,31 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `actividades`
 --
 ALTER TABLE `actividades`
-  MODIFY `idAct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idAct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-  MODIFY `idAsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  MODIFY `idCar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idCar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  MODIFY `idLug` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idLug` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Restricciones para tablas volcadas
