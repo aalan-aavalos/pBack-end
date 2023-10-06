@@ -26,6 +26,8 @@ import { ActivAdmComponent } from './components/activ-adm/activ-adm.component';
 import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
 import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,8 @@ import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

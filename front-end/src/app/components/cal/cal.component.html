@@ -2,8 +2,14 @@
     <div class="col-md-2">
         <app-sidebar-lec></app-sidebar-lec>
     </div>
-    <div class="col-md-10">
-            <app-calendario class="calendario"></app-calendario>
+    <div class="col-md-10 calendario">
+        <app-calendario></app-calendario>
+        
         <p>¿Te gustaria participar en un evento? <strong><a href="/regis"> ¡Inscribete!</a></strong></p>
+        
+        <google-map [center]="position">
+            <map-marker [position]="position" [label]="label" [title]="title">
+            </map-marker>
+        </google-map>
     </div>
 </div>
