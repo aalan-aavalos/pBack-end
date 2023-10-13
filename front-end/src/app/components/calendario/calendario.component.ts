@@ -10,6 +10,18 @@ import { Actividad } from 'src/app/models/actividades';
 })
 export class CalendarioComponent implements OnInit {
 
+  title = 'aGeo';
+
+  position = {
+    lat: 21.168616391601283,
+    lng: -100.93140713476811
+  };
+
+  label = {
+    color: 'white',
+    text: 'Auditorio UTNG'
+  };
+
   eventInfoVisible: boolean = false;
   selectedEvent: any;
 

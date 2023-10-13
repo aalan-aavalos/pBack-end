@@ -27,6 +27,7 @@ import { NotifAdmComponent } from './components/notif-adm/notif-adm.component';
 import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     CalendarioComponent,
     ActivAdmComponent,
     NotifAdmComponent,
-    CalAdmComponent
+    CalAdmComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
