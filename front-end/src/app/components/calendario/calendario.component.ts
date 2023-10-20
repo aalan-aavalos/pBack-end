@@ -26,13 +26,13 @@ export class CalendarioComponent implements OnInit {
   selectedEvent: any;
 
   week: any = [
-    "Domingo",
     "Lunes",
     "Martes",
     "Miercoles",
     "Jueves",
     "Viernes",
-    "Sabado"
+    "Sabado",
+    "Domingo"
   ];
 
   eventos: Actividad[] = [];
@@ -135,6 +135,7 @@ export class CalendarioComponent implements OnInit {
     if (eventosDia.length > 0) {
       this.eventInfoVisible = true;
       this.selectedEvent = eventosDia[0];
+      //console.log("Lugar:" + this.selectedEvent?.idLug) Esto te va a servir
     } else {
       this.eventInfoVisible = false;
     }
