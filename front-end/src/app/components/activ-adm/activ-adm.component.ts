@@ -4,6 +4,14 @@ import { Component,OnInit,Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { LugaresService } from 'src/app/services/lugares.service';
+import { HttpClient } from '@angular/common/http';
+
+// Define la interfaz para la respuesta de Facebook
+interface FacebookResponse {
+  // Define las propiedades de la respuesta que necesitas
+  status: number;
+  // Otras propiedades si es necesario
+}
 
 @Component({
   selector: 'app-activ-adm',
@@ -11,13 +19,54 @@ import { LugaresService } from 'src/app/services/lugares.service';
   styleUrls: ['./activ-adm.component.css']
 })
 export class ActivAdmComponent implements OnInit{
-  constructor(public actividadService:ActividadesService, public userService:UsersService, public lugaresService:LugaresService){}
-  
+  constructor(public actividadService:ActividadesService, public userService:UsersService, public lugaresService:LugaresService, private client: HttpClient){}
+
   ngOnInit(): void{
     this.getAct();
     this.getUsr();
     this.getLugar();
   }
+
+  createMensajeActividad(actividad: Actividad, mensajePersonalizado: string): string {
+    const fecha = actividad.fecha;
+    const nombre = actividad.nomAct;
+    const responsable = actividad.usr;
+    const lugar = actividad.nomLug;
+    const descripcion = actividad.descripcion;
+  
+    const mensaje = `${mensajePersonalizado}\nFecha: ${fecha}\nNombre: ${nombre}\nResponsable: ${responsable}\nLugar: ${lugar}\nDescripción: ${descripcion}`;
+  
+    return mensaje;
+  }
+  
+  public confirmarPublicacion(actividad: Actividad) {
+    const confirmacion = window.confirm('¿Estás seguro de publicar esta actividad?');
+  
+    if (confirmacion) {
+      this.publicarPublicacion(actividad);
+    }
+  }
+  
+  publicarPublicacion(actividad: Actividad) {
+    const mensajePersonalizado = 'Se ha registrado una nueva actividad:';
+    const mensaje = this.createMensajeActividad(actividad, mensajePersonalizado);
+    const access_token = 'EAAMbJNs6S24BOwaKcqSMvDMwIYUjZBSLNAPNtQ97RTP6ZBu8VJkg0dCUM7dNVqI9rtZAf1GFtKLfv9yY7WSykYI2cZCeCpfcYLZChFegLUAS1dA8ldnvq0cuFCWgwmWMrDS5WZCKz09ZBcdHWdlVRKTfTtuDSxjpxL18HZBXBQSEGEoNHZBuT1XvulktZCbud9JL0ZD';
+  
+    const data = {
+      message: mensaje,
+      access_token: access_token
+    };
+  
+    this.client.post<FacebookResponse>("https://graph.facebook.com/131556816715104/feed", data)
+      .subscribe((response: FacebookResponse) => {
+        if (response && response.status === 200) {
+          console.log('La publicación se realizó correctamente.');
+        } else {
+          console.error('Ocurrió un error al publicar la entrada.');
+        }
+      });
+  }
+  
 
   getLugar(){
     this.lugaresService.getLug().subscribe(
