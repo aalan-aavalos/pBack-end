@@ -55,14 +55,13 @@ export class CalendarioComponent implements OnInit {
 
   //Calendario
   week: any = [
-    "Domingo",
     "Lunes",
     "Martes",
     "Miercoles",
     "Jueves",
     "Viernes",
     "Sabado",
-    
+    "Domingo"
   ];
 
   //Calendario
@@ -155,7 +154,7 @@ export class CalendarioComponent implements OnInit {
     if (eventosDia.length > 0) {
       this.eventInfoVisible = true;
       this.selectedEvent = eventosDia[0];
-      console.log("Lugar:" + this.selectedEvent?.idLug)// Esto te va a servir
+      //console.log("Lugar:" + this.selectedEvent?.idLug) Esto te va a servir
     } else {
       this.selectedEvent = eventosDia[0];
       console.log(this.selectedEvent?.idLug)

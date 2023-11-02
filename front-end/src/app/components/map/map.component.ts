@@ -45,6 +45,9 @@ export class MapComponent {
        */
       
       //marker(this.geo, {icon:myIcon}).addTo(this.map).bindPopup("<strong>Esta es mi ubicación</strong>").openPopup(); 
+      marker(this.geo).addTo(this.map).bindPopup("<strong>Aqui estas!</strong>").openPopup(); 
+      //marker([21.16760564090466, -100.9295686333674]).addTo(this.map).bindPopup("<strong>Cancha UTNG</strong>").openPopup();
+      marker([21.16860141641717, -100.93142280682983]).addTo(this.map).bindPopup("<strong>Auditorio UTNG</strong>").openPopup();
 
       
       marker(this.geo).addTo(this.map).bindPopup("<strong>Esta es mi ubicación</strong>").openPopup(); 
