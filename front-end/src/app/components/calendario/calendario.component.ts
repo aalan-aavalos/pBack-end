@@ -38,6 +38,7 @@ export class CalendarioComponent implements OnInit {
     //Mapa
     setTimeout(() =>{
       this.geo = this.placesService.useLocation;
+      console.log("Geo: " + this.geo)
     }, 2000); 
   }
 
