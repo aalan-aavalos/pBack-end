@@ -203,7 +203,6 @@ export class CalendarioComponent implements OnInit {
       switch(this.selectedEvent?.idLug){
         case 1:
           marker([21.167575803811204, -100.92955694665577]).addTo(this.map).bindPopup("<strong>Cancha de futbol</strong>").openPopup()
-          
           break;
         case 2:
           marker([21.168624220198005, -100.93141169411481]).addTo(this.map).bindPopup("<strong>Auditorio UTNG</strong>").openPopup();
@@ -221,9 +220,7 @@ export class CalendarioComponent implements OnInit {
           marker([21.168624220198005, -100.93141169411481]).addTo(this.map).bindPopup("<strong>Gimanasio </strong>").openPopup();
           break;
         default:
-          
           marker([21.167347898560337, -100.93122052054386]).addTo(this.map).bindPopup("<strong>UTNG</strong>").openPopup(); 
-          
           break;
       }
       

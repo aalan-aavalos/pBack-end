@@ -54,7 +54,7 @@ export class NavbarComponent {
           console.log(this.weatherData);
         },
         error => {
-          console.error('Error al obtener datos: ', error);
+          console.error('Error al obtener datos:  ', error);
         }        
       );
     }, 2000); 
