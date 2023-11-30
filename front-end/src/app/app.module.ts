@@ -27,6 +27,12 @@ import { CalAdmComponent } from './components/cal-adm/cal-adm.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapComponent } from './components/map/map.component';
+import { ECartComponent } from './components/e-cart/e-cart.component';
+import { ECartItemComponent } from './components/e-cart-item/e-cart-item.component';
+import { EModalComponent } from './components/e-modal/e-modal.component';
+import { EProductItemComponent } from './components/e-product-item/e-product-item.component';
+import { EProductListComponent } from './components/e-product-list/e-product-list.component';
+import { TiendaComponent } from './components/tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,13 @@ import { MapComponent } from './components/map/map.component';
     ActivAdmComponent,
     NotifAdmComponent,
     CalAdmComponent,
-    MapComponent
+    MapComponent,
+    ECartComponent,
+    ECartItemComponent,
+    EModalComponent,
+    EProductItemComponent,
+    EProductListComponent,
+    TiendaComponent
   ],
   imports: [
     BrowserModule,
