@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-e-modal',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./e-modal.component.css']
 })
 export class EModalComponent {
+  @Input() amount: any;
+  @Input() items: any;
 
+  constructor(public activeModal: NgbActiveModal){}
 }
