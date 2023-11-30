@@ -34,6 +34,15 @@ import { EProductItemComponent } from './components/e-product-item/e-product-ite
 import { EProductListComponent } from './components/e-product-list/e-product-list.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 
+//Paypal ademas instale {npm i ngx-paypal}
+import { NgxPayPalModule } from 'ngx-paypal';
+
+//Instale eso ,{ng add @ng-bootstrap/ng-bootstrap}
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//Spinner {npm i ngx-spinner}
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,9 +79,13 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgxPayPalModule,
+    NgbModule,
+    NgxSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] //Agregue eso para el ngx-spinner
 })
 export class AppModule { }
