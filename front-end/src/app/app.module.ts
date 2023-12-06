@@ -37,6 +37,9 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 //Paypal ademas instale {npm i ngx-paypal}
 import { NgxPayPalModule } from 'ngx-paypal';
 
+//Instale eso ,{ng add @ng-bootstrap/ng-bootstrap}
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 //Spinner {npm i ngx-spinner}
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -78,6 +81,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     GoogleMapsModule,
     NgxPayPalModule,
+    //NgbModule,
     NgxSpinnerModule
   ],
   providers: [],

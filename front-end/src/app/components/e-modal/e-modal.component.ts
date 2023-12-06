@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-e-modal',
@@ -10,5 +10,5 @@ export class EModalComponent {
   @Input() amount: any;
   @Input() items: any;
 
-  constructor(public activeModal: NgbActiveModal){}
+  //constructor(public activeModal: NgbActiveModal){}
 }

@@ -1,1 +1,10 @@
-<p>e-product-item works!</p>
+<div class="card mb-3">
+    <img [src]="product.imgUrl" class="card-img-top">
+    <div class="card-body">
+    <div class="text-center"></div>
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <p class="card-text">${{product.price}}</p>
+      <button class="btn btn-outline-success" (click)="addToCart()"><i class="fas fa-cart-plus"></i> to cart</button>
+    </div>
+  </div>

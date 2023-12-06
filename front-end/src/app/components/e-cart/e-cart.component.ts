@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ICreateOrderRequest, IPayPalConfig, ITransactionItem } from 'ngx-paypal';
 import { CartItem } from 'src/app/models/cart-item';
 import { Product } from 'src/app/models/product';
 import { MessageService } from 'src/app/services/message.service';
 import { StorageService } from 'src/app/services/storage.service';
-import { ModalComponent } from '../modal/modal.component';
+//import { ModalComponent } from '../modal/modal.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -25,7 +25,7 @@ export class ECartComponent {
   constructor(
     private messageService: MessageService,
     private storageService: StorageService,
-    private modalService: NgbModal,
+    //private modalService: NgbModal,
     private spinner: NgxSpinnerService
   ) { }
 
@@ -162,8 +162,8 @@ export class ECartComponent {
 
   //PayPal
   openModal(items: ITransactionItem[], amount: string): void {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.items = items;
-    modalRef.componentInstance.amount = amount;
+    //const modalRef = this.modalService.open(ModalComponent);
+    //modalRef.componentInstance.items = items;
+    //modalRef.componentInstance.amount = amount;
   }
 }

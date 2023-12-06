@@ -1,1 +1,5 @@
-<p>e-product-list works!</p>
+<div class="row">
+    <div class="col-md-6" *ngFor="let product of products">
+        <app-e-product-item [product]="product"></app-e-product-item>
+    </div>
+</div>
