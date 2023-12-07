@@ -2,6 +2,7 @@
     <div class="alert alert-info text-center">
         <h4>Carrito vacio</h4>
     </div>
+    <button type="button" class="btn btn-primary" [routerLink]="['/home']"><i class="fa-solid fa-house">     </i>Volver</button>
 </div>
 <div *ngIf="cartItems.length > 0">
     <div class="alert alert-info text-center">
@@ -24,8 +25,9 @@
     <div class="alert alert-warning text-center" *ngIf="cartItems.length > 0">
         <strong>Total: </strong>${{total}}
     </div>
-    <button class="btn btn-outline-danger btn-block mb-3" (click)="emptyCart()">
+    <button class="btn btn-danger btn-block mb-3" (click)="emptyCart()">
         <i class="fas fa-ban"></i> Vaciar carrito
     </button>
     <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    <button type="button" class="btn btn-primary" [routerLink]="['/home']"><i class="fa-solid fa-house">     </i>Volver</button>
 </div>
