@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LugaresService {
-  private URL_API='http://localhost:3000/lugares';
+  private URL_API='https://gitapirestprueba-production.up.railway.app/lugares';
   public lugar:Lugar=
   {idLug:0,nomLug:''}
   lugares:Lugar[]=[];

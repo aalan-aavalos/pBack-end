@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  URL_API='http://localhost:3000/login/';
+  URL_API='https://gitapirestprueba-production.up.railway.app/login/';
   public login:Login=
   { idUsr:0,usr:'',pwd:'',rol:''}
 

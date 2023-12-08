@@ -5,7 +5,7 @@ import { asistencia } from '../models/asistencia';
   providedIn: 'root'
 })
 export class AsistenciaService {
-  URL_API='http://localhost:3000/asistencia/';
+  URL_API='https://gitapirestprueba-production.up.railway.app/asistencia/';
   public asistencia:asistencia={idAsi:0,numCon:'',idAct:''}
 
   asistencias:asistencia[]=[];

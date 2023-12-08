@@ -5,7 +5,7 @@ import { Carrera } from '../models/carrera';
   providedIn: 'root'
 })
 export class CarreraService {
-  URL_API='http://localhost:3000/carreras/';
+  URL_API='https://gitapirestprueba-production.up.railway.app/carreras/';
   public carrera:Carrera={idCar:0,nomCar:'',area:''}
 
   carreras:Carrera[]=[];

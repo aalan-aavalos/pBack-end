@@ -6,7 +6,7 @@ import { User } from '../models/users';
   providedIn: 'root'
 })
 export class UsersService {
-  private URL_API='http://localhost:3000/usuarios';
+  private URL_API='https://gitapirestprueba-production.up.railway.app/usuarios/';
   public user:User=
   {idUsr:0,usr:'',pwd:'',rol:''}
   users:User[]=[]

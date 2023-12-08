@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ParticipantesService{
-  URL_API='http://localhost:3000/participantes/';
+  URL_API='https://gitapirestprueba-production.up.railway.app/participantes/';
   public participante:Participante=
   { numCon:0,nomPar:'',grupo:'',idCar:0}
 
