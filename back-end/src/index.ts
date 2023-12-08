@@ -9,6 +9,8 @@ import lugaresRoutes from "./routes/lugares-routes";
 import ParticipantesRoutes from "./routes/Participantes-routes";
 import asistenciaRoutes from "./routes/asistencia-routes";
 import carrerasRoutes from "./routes/carreras-routes";
+
+
 class Server{
     public app:Application;
 
