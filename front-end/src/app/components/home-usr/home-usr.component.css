@@ -1,0 +1,62 @@
+/* Estilos para las miniaturas de video */
+.video-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .video-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .video-item img {
+    width: 100px; /* Ancho de la imagen */
+    height: 80px; /* Alto de la imagen */
+    border-radius: 6px;
+    margin-right: 15px;
+    object-fit: cover;
+    cursor: pointer; /* Cambiar el cursor a una mano */
+  }
+  
+  .video-info {
+    flex-grow: 1;
+  }
+  
+  .video-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  
+  .video-info p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 0;
+  }
+  
+  .video-player-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    margin: 20px 0; /* Ajustar el margen superior e inferior */
+  }
+  
+  .video-player {
+    max-width: 800px; /* Ancho máximo del contenedor de video */
+  }
+  
+  #video-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente el contenido del video */
+    align-items: center; /* Centrar verticalmente el contenido del video */
+  }
+  
+  .noticias-heading {
+    text-align: center; /* Centrar el texto */
+    font-size: 2em; /* Ajustar el tamaño de fuente */
+    /* Otros estilos que desees aplicar */
+  }
+  
