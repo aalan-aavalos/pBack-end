@@ -1,0 +1,52 @@
+<body>
+  <section class="row">
+    <div class="col-md-2">
+      <app-sidebar-usr></app-sidebar-usr>
+    </div>
+    <div id="Contenido" class="col-md-10">
+      <!--Inicio de la tabla de Actividades-->
+      <article class="tabla">
+        <table class="eventos">
+          <thead>
+            <tr>
+              <th class="numero">#</th>
+              <th>
+                <p>Fecha</p>
+              </th>
+              <th>
+                <p>Nombre</p>
+              </th>
+              <th>
+                <p>Responsable</p>
+              </th>
+              <th>
+                <p>Lugar</p>
+              </th>
+              <th>
+                <p>Descripcion</p>
+              </th>
+              <th>
+                <p>programa</p>
+              </th>
+              
+            </tr>
+          </thead>
+          <tbody class="infoTab">
+            <tr *ngFor="let item of actividadService.actividades">
+              <td class="numero">{{ item.idAct }}</td>
+              <td>{{ item.fecha | fechaEsp }}</td>
+              <td>{{ item.nomAct }}</td>
+              <td>{{ item.usr }}</td>
+              <td>{{ item.nomLug }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td>
+                <a href="" target="_blank">
+                  <i class="fa-sharp fa-regular fa-file"></i> </a>Ver archivo
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+  </section>
+</body>

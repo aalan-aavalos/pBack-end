@@ -1,0 +1,200 @@
+<body>
+    <section class="row">
+      <div class="col-md-2">
+        <app-sidebar-adm></app-sidebar-adm>
+      </div>
+      <div id="Contenido" class="col-md-10">
+        <!--Inicio de la tabla de Actividades-->
+        <article class="tabla">
+          <table class="eventos">
+            <thead>
+              <tr>
+                <th class="numero">#</th>
+                <th><p>Fecha</p></th>
+                <th><p>Nombre</p></th>
+                <th><p>Responsable</p></th>
+                <th><p>Lugar</p></th>
+                <th><p>Descripcion</p></th>
+                <th><p>programa</p></th>
+                <th id="gestion"><p>Gestion</p></th>
+              </tr>
+            </thead>
+            <tbody class="infoTab">
+              <tr *ngFor="let item of actividadService.actividades">
+                <td class="numero">{{ item.idAct }}</td>
+                <td>{{ item.fecha | fechaEsp }}</td>
+                <td>{{ item.nomAct }}</td>
+                <td>{{ item.usr }}</td>
+                <td>{{ item.nomLug }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>
+                  <a href="" target="_blank">
+                    <i class="fa-sharp fa-regular fa-file"></i> </a
+                  >Ver archivo
+                </td>
+                <td>
+                  <button
+                    class="btn btn-secondary btn-sm"
+                    (click)="updAct(item); mostrar(); Alerta(); Ocultar()"
+                  >
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="delAct(item.idAct)"
+                  >
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button class="btn btn-primary btn-sm" (click)="confirmarPublicacion(item)">
+                    <i class="fa-solid fas fa-share"></i> Compartir
+                  </button>                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <div class="contBoton">
+          <button
+            class="agregar"
+            (click)="mostrar(); Alerta(); Ocultar()"
+            *ngIf="oculto"
+          >
+            Agregar Nueva
+          </button>
+        </div>
+        <!--Bloque del Formulario-->
+        <form class="agAct" *ngIf="visible" [ngClass]="{ visble: visible }">
+          <div class="tituloForm">Gestionar Actividad</div>
+          <form class="formulario" #actividadForm="ngForm">
+            <div>
+              <input
+                type="hidden"
+                name="idAct"
+                [(ngModel)]="actividadService.actividad.idAct"
+              />
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Fecha:</span>
+                <input
+                  name="fecha"
+                  type="date"
+                  id="basic-url"
+                  class="form-control"
+                  [(ngModel)]="actividadService.actividad.fecha"
+                />
+                <span class="input-group-text" id="basic-addon2"
+                  >Nombre de la Actividad:</span
+                >
+                <input
+                  name="nomAct"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="actividadService.actividad.nomAct"
+                  id="basic-url"
+                />
+              </div>
+  
+              <label for="basic-url" class="form-label"></label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"
+                  >Responsable</span
+                >
+                <select
+                  name="idUsr"
+                  type="text"
+                  class="form-select"
+                  id="basic-url"
+                  aria-describedby="basic-addon3"
+                  [(ngModel)]="actividadService.actividad.idUsr"
+                >
+                  <option
+                    *ngFor="let user of userService.users"
+                    [value]="user.idUsr"
+                  >
+                    {{ user.idUsr }}. {{ user.usr }}
+                  </option>
+                </select>
+              </div>
+  
+              <label for="basic-url" class="form-label"></label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Lugar</span>
+                <select
+                  name="idLug"
+                  type="text"
+                  class="form-select"
+                  id="basic-url"
+                  aria-describedby="basic-addon3"
+                  [(ngModel)]="actividadService.actividad.idLug"
+                >
+                  <option
+                    *ngFor="let lugar of lugaresService.lugares"
+                    [value]="lugar.idLug"
+                  >
+                    {{ lugar.idLug }}. {{ lugar.nomLug }}
+                  </option>
+                </select>
+              </div>
+  
+              <span>Descripcion del evento</span>
+              <div class="input-group">
+                <textarea
+                  name="descripcion"
+                  class="form-control"
+                  aria-label="With textarea"
+                  [(ngModel)]="actividadService.actividad.descripcion"
+                ></textarea>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2"
+                  >Cargar Programa</span
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+              </div>
+            </div>
+            <div class="confirmacion" *ngIf="alerta">
+              <!--Botones de confirmacion y cancelacion-->
+              <span>Desea guardar los cambios?</span>
+              <div class="boton2">
+                <button class="btn btn-secondary m-2" (click)="Alerta()">
+                  no
+                </button>
+                <button
+                  class="btn btn-primary m-2"
+                  (click)="
+                    insAct(actividadForm);
+                    mostrar();
+                    Ocultar();
+                    Alerta();
+                    formReset(actividadForm)
+                  "
+                >
+                  si
+                </button>
+              </div>
+            </div>
+          </form>
+          <button
+            type="reset"
+            class="btn btn-secondary m-2"
+            (click)="formReset(actividadForm)"
+          >
+            <i class="fa-solid fa-broom-wide"></i>
+            Limpiar
+          </button>
+          <div class="opciones">
+            <button
+              class="cancelar"
+              (click)="mostrar(); Alerta(); Ocultar(); formReset(actividadForm)"
+            >
+              Cancelar
+            </button>
+            <button class="guardar" (click)="Alerta()">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
