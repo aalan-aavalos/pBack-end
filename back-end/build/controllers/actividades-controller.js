@@ -27,21 +27,33 @@ class ActividadesController {
     }
     insertAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+<<<<<<< HEAD
             yield database_1.pool.query('INSERT INTO actividades SET ?', [req.body]);
+=======
+            yield database_1.pool.query('INSERT INTO Actividades SET ?', [req.body]);
+>>>>>>> origin/spotify
             res.json({ Message: 'Se inserto correctamente' });
         });
     }
     updateAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { idAct } = req.params;
+<<<<<<< HEAD
             yield database_1.pool.query('UPDATE actividades SET ? WHERE idAct=?', [req.body, idAct]);
+=======
+            yield database_1.pool.query('UPDATE Actividades SET ? WHERE idAct=?', [req.body, idAct]);
+>>>>>>> origin/spotify
             res.json({ mesagge: 'Se ha actualizado con exito' });
         });
     }
     deleteAct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { idAct } = req.params;
+<<<<<<< HEAD
             yield database_1.pool.query('DELETE FROM actividades WHERE idAct=?', [idAct]);
+=======
+            yield database_1.pool.query('DELETE FROM Actividades WHERE idAct=?', [idAct]);
+>>>>>>> origin/spotify
             res.json({ Message: 'Se ha eliminado correctamente' });
         });
     }
